@@ -1,29 +1,45 @@
 <?php
 
+include 'connexion.php';
 
-$host = '127.0.0.1'; 
-$port = '3306';
-$db = 'vote_bdd';
-$login = 'root';
-$password = '';
+function CreateBDD() {
+    $host = '127.0.0.1';
+    $port = '3306';
+    $db = 'vote_bdd';
+    $login = 'root';
+    $password = '';
 
-try {
-    
-    $conn = new PDO("mysql:host=$host", $login, $password);
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $sql = "CREATE DATABASE $db";
-    $conn->exec($sql);
-    echo "BDD ready";
+    try {
 
-
-} catch (PDOException $e) {
-    
-    var_dump($e->getMessage()); 
-
-} 
+        $conn = new PDO("mysql:host=$host;", $login, $password);
+        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $sql = "CREATE DATABASE $db";
+        $conn->exec($sql);
+        echo "BDD ready";
 
 
-$sql = 
+    } catch (PDOException $e) {
 
-&$pdo = exec($sql);
-echo "Tables created";
+        var_dump($e->getMessage());
+
+    }
+}
+
+function CreateTable(&$conn) {
+
+    $query = file_get_contents('install.sql');
+
+    $stmt = $conn->prepare($query);
+
+    if ($stmt->execute()) {
+        return true;
+    }
+    else {
+        return false;
+    }
+
+}
+
+
+CreateTable($conn);
+// CreateBDD();
