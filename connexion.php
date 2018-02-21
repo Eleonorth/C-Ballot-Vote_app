@@ -8,12 +8,8 @@ $password = '';
 
 try {
     
-    $conn = new PDO("mysql:host=$host", $login, $password);
+    $conn = new PDO('mysql:host='.$host.';port='.$port. ';dbname='.$db, $login, $password);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    // $sql = "CREATE DATABASE $db";
-    // $conn->exec($sql);
-    // echo "BDD ready";
-
 
 } catch (PDOException $e) {
     
