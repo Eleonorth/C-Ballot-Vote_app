@@ -17,9 +17,9 @@ function createOrganization(&$conn,$lastname,$name) {
 // Edition d'une organisation
 
 
-function editOrganization(&$conn,$name,$newname) {
+function editOrganization(&$conn,$idorganization,$newname) {
 
-    $conn->exec('UPDATE `organization` SET `name` = $newname WHERE `name` = $name)');
+    $conn->exec('UPDATE `organization` SET `name` = $newname WHERE `idorganization` = $idorganization)');
 
     echo 'Edition succeeded !';
 }
@@ -27,9 +27,9 @@ function editOrganization(&$conn,$name,$newname) {
 
 // Suppression d'une organisation
 
-function deleteOrganization(&$conn,$name) {
+function deleteOrganization(&$conn,$idorganization) {
 
-    $conn->exec('DELETE FROM `organization` WHERE `name` = $name)');
+    $conn->exec('DELETE FROM `organization` WHERE `idorganization` = $idorganization)');
 
     echo 'Deletion succeeded !';
 
@@ -37,15 +37,15 @@ function deleteOrganization(&$conn,$name) {
 
 // Recherche d'une organisation par son nom 
 
-function searchOrganization(&$conn,$name) {
+function searchOrganization(&$conn,$idperson) {
 
-    $results = $conn->query('SELECT `name`,`firstname`,`lastname` FROM `organization` 
+    $results = $conn->query('SELECT `idorganization`, `name` FROM `organization` 
                             INNER JOIN `person` ON `organization`.`idperson`=`person`.`idperson`
-                             WHERE `name` LIKE $name)');
+                             WHERE `idperson` LIKE $idperson)');
 
     while($result = $results->fetchAll()) {
 
-	    var_dump($result['name'], $result['firstname'], $result['lastname']);
+	    var_dump($result['idorganization'], $result['name']);
 
     }
 
