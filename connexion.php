@@ -8,10 +8,10 @@ $password = '';
 
 try {
     
-    $conn = new PDO("mysql:host=$host", $login, $password);
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $sql = "CREATE DATABASE $db";
-    $conn->exec($sql);
+    $pdo = new PDO("mysql:host=$host", $login, $password);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $sql = "CREATE DATABASE IF NOT EXISTS $db";
+    $pdo->exec($sql);
     echo "BDD ready";
 
 
