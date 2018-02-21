@@ -10,9 +10,9 @@ try {
     
     $conn = new PDO("mysql:host=$host", $login, $password);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $sql = "CREATE DATABASE $db";
-    $conn->exec($sql);
-    echo "BDD ready";
+    // $sql = "CREATE DATABASE $db";
+    // $conn->exec($sql);
+    // echo "BDD ready";
 
 
 } catch (PDOException $e) {
