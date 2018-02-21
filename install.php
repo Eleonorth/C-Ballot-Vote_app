@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 
 $host = '127.0.0.1'; 
 $port = '3306';
@@ -28,3 +29,10 @@ $sql =
 &$pdo = exec($sql);
 echo "Tables created";
 
+=======
+include 'connexion.php';
+
+function CreateTable(&pdo) {
+	
+}
+>>>>>>> 540baac16e443747cfd73b9288dc6c092551048a
