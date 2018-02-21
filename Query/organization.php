@@ -7,22 +7,21 @@ include 'connexion.php';
 // Creation d'une organisation 
 function createOrganization(&$conn,$lastname,$name) {
 
-$conn->exec(INSERT INTO `organization` (`idorganization`, `idperson`, `name`) VALUES ('', (SELECT idperson FROM person WHERE lastname = $lastname), $name););
+    $conn->exec('INSERT INTO `organization` (`idperson`, `name`) 
+                VALUES ( (SELECT idperson FROM person WHERE lastname = $lastname), $name)');
 
-echo 'Creation succeed !';
+    echo 'Creation succeeded !';
+
 }
-
-
 
 // Edition d'une organisation
 
 
 function editOrganization(&$conn,$name,$newname) {
 
-$conn->exec(UPDATE `organization` SET `name` = $newname WHERE `name` = $name;);
+    $conn->exec('UPDATE `organization` SET `name` = $newname WHERE `name` = $name)');
 
-echo 'Edition succeed !';
-
+    echo 'Edition succeeded !';
 }
 
 
@@ -30,9 +29,9 @@ echo 'Edition succeed !';
 
 function deleteOrganization(&$conn,$name) {
 
-$conn->exec(DELETE FROM `organization` WHERE `name` = $name;);
+    $conn->exec('DELETE FROM `organization` WHERE `name` = $name)');
 
-echo 'Deletion succeed !';
+    echo 'Deletion succeeded !';
 
 } 
 
@@ -40,15 +39,18 @@ echo 'Deletion succeed !';
 
 function searchOrganization(&$conn,$name) {
 
-$results = $conn->exec(SELECT * FROM `organization` WHERE `name` LIKE $name;);
+    $results = $conn->query('SELECT `name`,`firstname`,`lastname` FROM `organization` 
+                            INNER JOIN `person` ON `organization`.`idperson`=`person`.`idperson`
+                             WHERE `name` LIKE $name)');
 
-while($result = $results->fetchAll()) {
+    while($result = $results->fetchAll()) {
 
-	var_dump($result);
+	    var_dump($result['name'], $result['firstname'], $result['lastname']);
+
+    }
 
 }
 
 
-}
 
 
