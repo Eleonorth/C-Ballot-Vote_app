@@ -8,7 +8,7 @@ include 'connexion.php';
 function createOrganization(&$conn,$idperson,$name) {
 
     $conn->exec('INSERT INTO `organization` (`idperson`, `name`) 
-                VALUES ( (SELECT idperson FROM person WHERE idperson = $idperson), $name)');
+                VALUES ( $idperson, $name)');
 
     echo 'Creation succeeded !';
 

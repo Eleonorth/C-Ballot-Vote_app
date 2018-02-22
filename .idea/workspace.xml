@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4a57de70-5e69-4800-a7c0-385e105f47a1" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/Query/generics.php" afterPath="$PROJECT_DIR$/Query/generics.php" />
-      <change beforePath="$PROJECT_DIR$/Query/install.php" afterPath="$PROJECT_DIR$/Query/install.php" />
+      <change beforePath="$PROJECT_DIR$/Query/organization.php" afterPath="$PROJECT_DIR$/Query/organization.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -18,8 +17,8 @@
       <file leaf-file-name="connexion.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Query/connexion.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="20" lean-forward="true" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
+            <state relative-caret-position="255">
+              <caret line="21" column="19" lean-forward="true" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -28,19 +27,21 @@
       <file leaf-file-name="generics.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Query/generics.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="71">
-              <caret line="53" column="0" lean-forward="true" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
+            <state relative-caret-position="144">
+              <caret line="63" column="47" lean-forward="false" selection-start-line="63" selection-start-column="47" selection-end-line="63" selection-end-column="47" />
               <folding>
-                <marker date="1519302936347" expanded="true" signature="170:198" ph="INSERT INTO ${$tablename}... " />
-                <marker date="1519302936347" expanded="true" signature="170:231" ph="INSERT INTO ${$tablename}... " />
-                <marker date="1519302936347" expanded="true" signature="170:248" ph="INSERT INTO ${$tablename}... " />
-                <marker date="1519302936347" expanded="true" signature="374:386" ph="DELETE FROM ${$tablename}... " />
-                <marker date="1519302936347" expanded="true" signature="374:406" ph="DELETE FROM ${$tablename}... " />
-                <marker date="1519302936347" expanded="true" signature="374:407" ph="DELETE FROM ${$tablename}... " />
-                <marker date="1519302936347" expanded="true" signature="374:415" ph="DELETE FROM ${$tablename}... " />
-                <marker date="1519302936347" expanded="true" signature="374:416" ph="DELETE FROM ${$tablename}... " />
-                <marker date="1519302936347" expanded="true" signature="374:418" ph="DELETE FROM ${$tablename}... " />
-                <marker date="1519302936347" expanded="true" signature="374:419" ph="DELETE FROM WHERE... " />
+                <marker date="1519307487581" expanded="true" signature="244:272" ph="INSERT INTO ${$tablename}... " />
+                <marker date="1519307487581" expanded="true" signature="244:305" ph="INSERT INTO ${$tablename}... " />
+                <marker date="1519307487581" expanded="true" signature="244:322" ph="INSERT INTO ${$tablename}... " />
+                <marker date="1519307487581" expanded="true" signature="517:529" ph="DELETE FROM ${$tablename}... " />
+                <marker date="1519307487581" expanded="true" signature="517:549" ph="DELETE FROM ${$tablename}... " />
+                <marker date="1519307487581" expanded="true" signature="517:550" ph="DELETE FROM ${$tablename}... " />
+                <marker date="1519307487581" expanded="true" signature="517:558" ph="DELETE FROM ${$tablename}... " />
+                <marker date="1519307487581" expanded="true" signature="517:559" ph="DELETE FROM ${$tablename}... " />
+                <marker date="1519307487581" expanded="true" signature="517:561" ph="DELETE FROM ${$tablename}... " />
+                <marker date="1519307487581" expanded="true" signature="517:562" ph="DELETE FROM WHERE... " />
+                <marker date="1519307487581" expanded="true" signature="1254:1322" ph="SELECT `idor... organization" />
+                <marker date="1519307487581" expanded="true" signature="1254:1346" ph="SELECT `idor... organization" />
               </folding>
             </state>
           </provider>
@@ -49,8 +50,18 @@
       <file leaf-file-name="install.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Query/install.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="122">
-              <caret line="37" column="21" lean-forward="true" selection-start-line="37" selection-start-column="21" selection-end-line="37" selection-end-column="21" />
+            <state relative-caret-position="190">
+              <caret line="41" column="0" lean-forward="true" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="install.sql" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Query/install.sql">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="176">
+              <caret line="51" column="15" lean-forward="true" selection-start-line="51" selection-start-column="15" selection-end-line="51" selection-end-column="15" />
               <folding />
             </state>
           </provider>
@@ -59,14 +70,13 @@
       <file leaf-file-name="organization.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Query/organization.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="43" column="64" lean-forward="true" selection-start-line="43" selection-start-column="64" selection-end-line="43" selection-end-column="64" />
+            <state relative-caret-position="85">
+              <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
               <folding>
-                <marker date="1519289641613" expanded="true" signature="139:277" ph="INSERT INTO `organization`... " />
-                <marker date="1519289641613" expanded="true" signature="214:268" ph="SELECT idper... person" />
-                <marker date="1519289641613" expanded="true" signature="430:515" ph="UPDATE `organization`... " />
-                <marker date="1519289641613" expanded="true" signature="663:731" ph="DELETE FROM `organization`... " />
-                <marker date="1519289641613" expanded="true" signature="898:1109" ph="SELECT `idor... organization" />
+                <marker date="1519304297588" expanded="true" signature="139:230" ph="INSERT INTO `organization`... " />
+                <marker date="1519304297588" expanded="true" signature="383:468" ph="UPDATE `organization`... " />
+                <marker date="1519304297588" expanded="true" signature="616:684" ph="DELETE FROM `organization`... " />
+                <marker date="1519304297588" expanded="true" signature="851:1062" ph="SELECT `idor... organization" />
               </folding>
             </state>
           </provider>
@@ -75,8 +85,8 @@
       <file leaf-file-name="person.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Query/person.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="21" lean-forward="false" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
+            <state relative-caret-position="0">
+              <caret line="3" column="14" lean-forward="true" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
               <folding>
                 <marker date="1519298449303" expanded="true" signature="164:224" ph="INSERT INTO person... " />
                 <marker date="1519298449303" expanded="true" signature="164:270" ph="INSERT INTO person... " />
@@ -103,6 +113,7 @@
         <option value="$PROJECT_DIR$/Query/person.php" />
         <option value="$PROJECT_DIR$/Query/connexion.php" />
         <option value="$PROJECT_DIR$/Query/install.php" />
+        <option value="$PROJECT_DIR$/Query/organization.php" />
         <option value="$PROJECT_DIR$/Query/generics.php" />
       </list>
     </option>
@@ -195,12 +206,12 @@
       <workItem from="1519288862232" duration="1547000" />
       <workItem from="1519292131279" duration="7355000" />
       <workItem from="1519300808224" duration="245000" />
-      <workItem from="1519301237799" duration="2449000" />
+      <workItem from="1519301237799" duration="6439000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11596000" />
+    <option name="totallyTimeSpent" value="15586000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -250,16 +261,18 @@
         <state relative-caret-position="731">
           <caret line="43" column="4" lean-forward="false" selection-start-line="43" selection-start-column="4" selection-end-line="43" selection-end-column="4" />
           <folding>
-            <marker date="1519302936347" expanded="true" signature="170:198" ph="INSERT INTO ${$tablename}... " />
-            <marker date="1519302936347" expanded="true" signature="170:231" ph="INSERT INTO ${$tablename}... " />
-            <marker date="1519302936347" expanded="true" signature="170:248" ph="INSERT INTO ${$tablename}... " />
-            <marker date="1519302936347" expanded="true" signature="374:386" ph="DELETE FROM ${$tablename}... " />
-            <marker date="1519302936347" expanded="true" signature="374:406" ph="DELETE FROM ${$tablename}... " />
-            <marker date="1519302936347" expanded="true" signature="374:407" ph="DELETE FROM ${$tablename}... " />
-            <marker date="1519302936347" expanded="true" signature="374:415" ph="DELETE FROM ${$tablename}... " />
-            <marker date="1519302936347" expanded="true" signature="374:416" ph="DELETE FROM ${$tablename}... " />
-            <marker date="1519302936347" expanded="true" signature="374:418" ph="DELETE FROM ${$tablename}... " />
-            <marker date="1519302936347" expanded="true" signature="374:419" ph="DELETE FROM WHERE... " />
+            <marker date="1519307487581" expanded="true" signature="244:272" ph="INSERT INTO ${$tablename}... " />
+            <marker date="1519307487581" expanded="true" signature="244:305" ph="INSERT INTO ${$tablename}... " />
+            <marker date="1519307487581" expanded="true" signature="244:322" ph="INSERT INTO ${$tablename}... " />
+            <marker date="1519307487581" expanded="true" signature="517:529" ph="DELETE FROM ${$tablename}... " />
+            <marker date="1519307487581" expanded="true" signature="517:549" ph="DELETE FROM ${$tablename}... " />
+            <marker date="1519307487581" expanded="true" signature="517:550" ph="DELETE FROM ${$tablename}... " />
+            <marker date="1519307487581" expanded="true" signature="517:558" ph="DELETE FROM ${$tablename}... " />
+            <marker date="1519307487581" expanded="true" signature="517:559" ph="DELETE FROM ${$tablename}... " />
+            <marker date="1519307487581" expanded="true" signature="517:561" ph="DELETE FROM ${$tablename}... " />
+            <marker date="1519307487581" expanded="true" signature="517:562" ph="DELETE FROM WHERE... " />
+            <marker date="1519307487581" expanded="true" signature="1254:1322" ph="SELECT `idor... organization" />
+            <marker date="1519307487581" expanded="true" signature="1254:1346" ph="SELECT `idor... organization" />
           </folding>
         </state>
       </provider>
@@ -269,11 +282,10 @@
         <state relative-caret-position="884">
           <caret line="52" column="0" lean-forward="false" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
           <folding>
-            <marker date="1519289641613" expanded="true" signature="139:277" ph="INSERT INTO `organization`... " />
-            <marker date="1519289641613" expanded="true" signature="214:268" ph="SELECT idper... person" />
-            <marker date="1519289641613" expanded="true" signature="430:515" ph="UPDATE `organization`... " />
-            <marker date="1519289641613" expanded="true" signature="663:731" ph="DELETE FROM `organization`... " />
-            <marker date="1519289641613" expanded="true" signature="898:1109" ph="SELECT `idor... organization" />
+            <marker date="1519304297588" expanded="true" signature="139:230" ph="INSERT INTO `organization`... " />
+            <marker date="1519304297588" expanded="true" signature="383:468" ph="UPDATE `organization`... " />
+            <marker date="1519304297588" expanded="true" signature="616:684" ph="DELETE FROM `organization`... " />
+            <marker date="1519304297588" expanded="true" signature="851:1062" ph="SELECT `idor... organization" />
           </folding>
         </state>
       </provider>
@@ -317,11 +329,10 @@
         <state relative-caret-position="884">
           <caret line="52" column="0" lean-forward="true" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
           <folding>
-            <marker date="1519289641613" expanded="true" signature="139:277" ph="INSERT INTO `organization`... " />
-            <marker date="1519289641613" expanded="true" signature="214:268" ph="SELECT idper... person" />
-            <marker date="1519289641613" expanded="true" signature="430:515" ph="UPDATE `organization`... " />
-            <marker date="1519289641613" expanded="true" signature="663:731" ph="DELETE FROM `organization`... " />
-            <marker date="1519289641613" expanded="true" signature="898:1109" ph="SELECT `idor... organization" />
+            <marker date="1519304297588" expanded="true" signature="139:230" ph="INSERT INTO `organization`... " />
+            <marker date="1519304297588" expanded="true" signature="383:468" ph="UPDATE `organization`... " />
+            <marker date="1519304297588" expanded="true" signature="616:684" ph="DELETE FROM `organization`... " />
+            <marker date="1519304297588" expanded="true" signature="851:1062" ph="SELECT `idor... organization" />
           </folding>
         </state>
       </provider>
@@ -349,16 +360,18 @@
         <state relative-caret-position="731">
           <caret line="43" column="4" lean-forward="false" selection-start-line="43" selection-start-column="4" selection-end-line="43" selection-end-column="4" />
           <folding>
-            <marker date="1519302936347" expanded="true" signature="170:198" ph="INSERT INTO ${$tablename}... " />
-            <marker date="1519302936347" expanded="true" signature="170:231" ph="INSERT INTO ${$tablename}... " />
-            <marker date="1519302936347" expanded="true" signature="170:248" ph="INSERT INTO ${$tablename}... " />
-            <marker date="1519302936347" expanded="true" signature="374:386" ph="DELETE FROM ${$tablename}... " />
-            <marker date="1519302936347" expanded="true" signature="374:406" ph="DELETE FROM ${$tablename}... " />
-            <marker date="1519302936347" expanded="true" signature="374:407" ph="DELETE FROM ${$tablename}... " />
-            <marker date="1519302936347" expanded="true" signature="374:415" ph="DELETE FROM ${$tablename}... " />
-            <marker date="1519302936347" expanded="true" signature="374:416" ph="DELETE FROM ${$tablename}... " />
-            <marker date="1519302936347" expanded="true" signature="374:418" ph="DELETE FROM ${$tablename}... " />
-            <marker date="1519302936347" expanded="true" signature="374:419" ph="DELETE FROM WHERE... " />
+            <marker date="1519307487581" expanded="true" signature="244:272" ph="INSERT INTO ${$tablename}... " />
+            <marker date="1519307487581" expanded="true" signature="244:305" ph="INSERT INTO ${$tablename}... " />
+            <marker date="1519307487581" expanded="true" signature="244:322" ph="INSERT INTO ${$tablename}... " />
+            <marker date="1519307487581" expanded="true" signature="517:529" ph="DELETE FROM ${$tablename}... " />
+            <marker date="1519307487581" expanded="true" signature="517:549" ph="DELETE FROM ${$tablename}... " />
+            <marker date="1519307487581" expanded="true" signature="517:550" ph="DELETE FROM ${$tablename}... " />
+            <marker date="1519307487581" expanded="true" signature="517:558" ph="DELETE FROM ${$tablename}... " />
+            <marker date="1519307487581" expanded="true" signature="517:559" ph="DELETE FROM ${$tablename}... " />
+            <marker date="1519307487581" expanded="true" signature="517:561" ph="DELETE FROM ${$tablename}... " />
+            <marker date="1519307487581" expanded="true" signature="517:562" ph="DELETE FROM WHERE... " />
+            <marker date="1519307487581" expanded="true" signature="1254:1322" ph="SELECT `idor... organization" />
+            <marker date="1519307487581" expanded="true" signature="1254:1346" ph="SELECT `idor... organization" />
           </folding>
         </state>
       </provider>
@@ -381,10 +394,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Query/connexion.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="21" column="19" lean-forward="true" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Query/person.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="21" lean-forward="false" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
+        <state relative-caret-position="0">
+          <caret line="3" column="14" lean-forward="true" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
           <folding>
             <marker date="1519298449303" expanded="true" signature="164:224" ph="INSERT INTO person... " />
             <marker date="1519298449303" expanded="true" signature="164:270" ph="INSERT INTO person... " />
@@ -401,49 +422,50 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Query/organization.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="43" column="64" lean-forward="true" selection-start-line="43" selection-start-column="64" selection-end-line="43" selection-end-column="64" />
+        <state relative-caret-position="85">
+          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
           <folding>
-            <marker date="1519289641613" expanded="true" signature="139:277" ph="INSERT INTO `organization`... " />
-            <marker date="1519289641613" expanded="true" signature="214:268" ph="SELECT idper... person" />
-            <marker date="1519289641613" expanded="true" signature="430:515" ph="UPDATE `organization`... " />
-            <marker date="1519289641613" expanded="true" signature="663:731" ph="DELETE FROM `organization`... " />
-            <marker date="1519289641613" expanded="true" signature="898:1109" ph="SELECT `idor... organization" />
+            <marker date="1519304297588" expanded="true" signature="139:230" ph="INSERT INTO `organization`... " />
+            <marker date="1519304297588" expanded="true" signature="383:468" ph="UPDATE `organization`... " />
+            <marker date="1519304297588" expanded="true" signature="616:684" ph="DELETE FROM `organization`... " />
+            <marker date="1519304297588" expanded="true" signature="851:1062" ph="SELECT `idor... organization" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Query/generics.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="71">
-          <caret line="53" column="0" lean-forward="true" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
+        <state relative-caret-position="144">
+          <caret line="63" column="47" lean-forward="false" selection-start-line="63" selection-start-column="47" selection-end-line="63" selection-end-column="47" />
           <folding>
-            <marker date="1519302936347" expanded="true" signature="170:198" ph="INSERT INTO ${$tablename}... " />
-            <marker date="1519302936347" expanded="true" signature="170:231" ph="INSERT INTO ${$tablename}... " />
-            <marker date="1519302936347" expanded="true" signature="170:248" ph="INSERT INTO ${$tablename}... " />
-            <marker date="1519302936347" expanded="true" signature="374:386" ph="DELETE FROM ${$tablename}... " />
-            <marker date="1519302936347" expanded="true" signature="374:406" ph="DELETE FROM ${$tablename}... " />
-            <marker date="1519302936347" expanded="true" signature="374:407" ph="DELETE FROM ${$tablename}... " />
-            <marker date="1519302936347" expanded="true" signature="374:415" ph="DELETE FROM ${$tablename}... " />
-            <marker date="1519302936347" expanded="true" signature="374:416" ph="DELETE FROM ${$tablename}... " />
-            <marker date="1519302936347" expanded="true" signature="374:418" ph="DELETE FROM ${$tablename}... " />
-            <marker date="1519302936347" expanded="true" signature="374:419" ph="DELETE FROM WHERE... " />
+            <marker date="1519307487581" expanded="true" signature="244:272" ph="INSERT INTO ${$tablename}... " />
+            <marker date="1519307487581" expanded="true" signature="244:305" ph="INSERT INTO ${$tablename}... " />
+            <marker date="1519307487581" expanded="true" signature="244:322" ph="INSERT INTO ${$tablename}... " />
+            <marker date="1519307487581" expanded="true" signature="517:529" ph="DELETE FROM ${$tablename}... " />
+            <marker date="1519307487581" expanded="true" signature="517:549" ph="DELETE FROM ${$tablename}... " />
+            <marker date="1519307487581" expanded="true" signature="517:550" ph="DELETE FROM ${$tablename}... " />
+            <marker date="1519307487581" expanded="true" signature="517:558" ph="DELETE FROM ${$tablename}... " />
+            <marker date="1519307487581" expanded="true" signature="517:559" ph="DELETE FROM ${$tablename}... " />
+            <marker date="1519307487581" expanded="true" signature="517:561" ph="DELETE FROM ${$tablename}... " />
+            <marker date="1519307487581" expanded="true" signature="517:562" ph="DELETE FROM WHERE... " />
+            <marker date="1519307487581" expanded="true" signature="1254:1322" ph="SELECT `idor... organization" />
+            <marker date="1519307487581" expanded="true" signature="1254:1346" ph="SELECT `idor... organization" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Query/connexion.php">
+    <entry file="file://$PROJECT_DIR$/Query/install.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="20" lean-forward="true" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
+        <state relative-caret-position="176">
+          <caret line="51" column="15" lean-forward="true" selection-start-line="51" selection-start-column="15" selection-end-line="51" selection-end-column="15" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Query/install.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="122">
-          <caret line="37" column="21" lean-forward="true" selection-start-line="37" selection-start-column="21" selection-end-line="37" selection-end-column="21" />
+        <state relative-caret-position="190">
+          <caret line="41" column="0" lean-forward="true" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
           <folding />
         </state>
       </provider>

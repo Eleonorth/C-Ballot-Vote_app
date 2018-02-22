@@ -2,6 +2,7 @@
 
 include 'connexion.php';
 
+// Fonction générique qui permet de créer un nouveau champ dans une table
 function create($tablename,$fields,$data) {
 
     $fields_values= implode(',',$fields);
@@ -15,6 +16,7 @@ function create($tablename,$fields,$data) {
 
 }
 
+// Fonction générique qui permet de supprimer un champ dans un table
 function delete ($tablename,$field,$id){
 
     $sql= 'DELETE FROM '.$tablename.' WHERE '.$field.'='.$id;
@@ -24,7 +26,7 @@ function delete ($tablename,$field,$id){
 
 }
 
-
+// Fonction générique qui permet d'éditer un ou plusieurs champs dans un table
 function edit($tablename,$field,$data,$wherefield, $id) {
 
 
@@ -44,30 +46,29 @@ function edit($tablename,$field,$data,$wherefield, $id) {
     $pdo->exec($sql);
 
 }
-//
-//$tablename= 'person';
-//$field=array('email',);
-//$data=array('bouh');
-//$wherefield='idperson';
-//$id=2;
-//edit($tablename,$field,$data,$wherefield,$id);
 
+// Fonction qui permet de rechercher un champ via un ID
+function searchById($data,$tablename,$id, $field) {
 
-$tablename = 'organization';
-$fields = array('idperson','name');
-$data= array("2","'IMIE'");
+    $data_values=implode(", ",$data);
 
-create($tablename,$fields,$data);
-////
-//delete('person',"idperson",'1');
+    $sql = 'SELECT '.$data_values.' FROM '.$tablename.' WHERE '.$field.' = '.$id;
 
-//$tablename = 'person';
-//$field = array("firstname","lastname");
-//$newvalue = array("Erwan","Marsac");
-//$wherefield= "idperson";
-//$id = '1';
-//
-//edit($tablename,$field,$newvalue,$wherefield,$id);
+    var_dump($sql);
+}
 
 
 
+//function : envoyer des mails via une liste aléatoire
+
+//function : simuler un vote avec un booléen : en passer aléatoirement à true ou false
+
+//function : envoyer les résultats des votes dans la table vote (id aléatoire)
+
+//function : clôturer la campagne
+
+//function : supprimer les données du compte organisateur => personne, son organisation et les campagnes liées
+
+//function : le code est-il toujours valide ?
+
+//function : que faut-il faire pour s'assurer qu'on ne conserve pas les mails du votant ?
