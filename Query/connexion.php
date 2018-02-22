@@ -19,7 +19,6 @@ function connectDb()
 
     }
 
-    echo 'connected';
     return $conn;
 }
 

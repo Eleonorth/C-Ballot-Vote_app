@@ -2,15 +2,23 @@
 
 include 'connexion.php';
 
+
+
 // Fonction générique qui permet de créer un nouveau champ dans une table
 function create($tablename,$fields,$data) {
+
+    for ($i=0;$i<count($data);$i++) {
+
+        $data[$i] = "'" . $data[$i] . "'";
+    }
+
 
     $fields_values= implode(',',$fields);
     $data_values=implode(',',$data);
 
 
     $sql= 'INSERT INTO '.$tablename.' ('.$fields_values.') '.'VALUES'.'('.$data_values.')';
-    var_dump($sql);
+
     $pdo = connectDb();
     $pdo->exec($sql);
 
@@ -72,3 +80,5 @@ function searchById($data,$tablename,$id, $field) {
 //function : le code est-il toujours valide ?
 
 //function : que faut-il faire pour s'assurer qu'on ne conserve pas les mails du votant ?
+
+
