@@ -25,10 +25,10 @@ function CreateBDD() {
     }
 }
 
-function CreateTable(&$conn) {
+function CreateTable() {
 
     $query = file_get_contents('install.sql');
-
+    $conn = connectDb();
     $stmt = $conn->prepare($query);
 
     if ($stmt->execute()) {
@@ -40,6 +40,6 @@ function CreateTable(&$conn) {
 
 }
 
+CreateBDD();
+CreateTable();
 
-CreateTable($conn);
-// CreateBDD();
