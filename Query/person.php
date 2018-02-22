@@ -5,11 +5,11 @@ include 'connexion.php';
 function createPerson($email, $password, $firstname, $lastname)
 {
     $conn = connectDb();
-    echo "coucou";
     $sql = "INSERT INTO person(email,password,firstname,lastname)VALUES('$email','$password','$firstname','$lastname')";
-    echo "ca marche";
     $conn->exec($sql);
-    echo "c'est fait";
+    var_dump($sql);
+
+
 
 
 }
