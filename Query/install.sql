@@ -33,9 +33,8 @@ CREATE TABLE IF NOT EXISTS `invitation` (
   idinvitation INT NOT NULL AUTO_INCREMENT,
   idcampaign INT,
   email VARCHAR (255) NOT NULL UNIQUE ,
-  code INT (10) NOT NULL UNIQUE,
-  emailsent TINYINT (1) NOT NULL UNIQUE,
-  hasvoted TINYINT (1) NOT NULL UNIQUE,
+  code INT (10) NOT NULL,
+  emailsent TINYINT (1) NOT NULL,
   PRIMARY KEY (idinvitation),
   FOREIGN KEY (idcampaign) REFERENCES campaign(idcampaign)
 ) ENGINE=InnoDB CHARACTER SET utf8 COLLATE utf8_unicode_ci;

@@ -67,7 +67,6 @@ function searchById($data,$tablename,$id, $field) {
 
 
 
-//function : envoyer des mails via une liste aléatoire
 
 //function : simuler un vote avec un booléen : en passer aléatoirement à true ou false
 
@@ -80,5 +79,4 @@ function searchById($data,$tablename,$id, $field) {
 //function : le code est-il toujours valide ?
 
 //function : que faut-il faire pour s'assurer qu'on ne conserve pas les mails du votant ?
-
 

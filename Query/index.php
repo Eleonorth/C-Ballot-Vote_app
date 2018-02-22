@@ -1,7 +1,35 @@
 <?php
 
-include 'connexion.php';
-include 'organization.php';
+?>
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Test</title>
+</head>
+<body>
+
+<form action="person.php" method="post">
+    <input type="number" name="nbr">
+    <button type="submit">Création fausse donnée</button>
+</form>
 
 
-searchOrganization(&$conn,"IMIE");
+<form action="invitation.php" method="post">
+    <input type="number" name="nbrinvite">
+    <button type="submit">Création fausse donnée</button>
+</form>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
