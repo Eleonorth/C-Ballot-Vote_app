@@ -35,12 +35,13 @@ CREATE TABLE IF NOT EXISTS `invitation` (
   email VARCHAR (255) NOT NULL UNIQUE ,
   code INT (10) NOT NULL UNIQUE,
   emailsent TINYINT (1) NOT NULL UNIQUE,
+  hasvoted TINYINT (1) NOT NULL UNIQUE,
   PRIMARY KEY (idinvitation),
   FOREIGN KEY (idcampaign) REFERENCES campaign(idcampaign)
 ) ENGINE=InnoDB CHARACTER SET utf8 COLLATE utf8_unicode_ci;
 
 
-CREATE TABLE IF NOT EXISTS `option` (
+CREATE TABLE IF NOT EXISTS `choice` (
   idoption INT NOT NULL AUTO_INCREMENT,
   idcampaign INT,
   name VARCHAR(100),
@@ -51,5 +52,5 @@ CREATE TABLE IF NOT EXISTS `option` (
 CREATE TABLE IF NOT EXISTS `vote` (
   idoption INT,
   voted DATETIME,
-  FOREIGN KEY (idoption) REFERENCES option(idoption)
+  FOREIGN KEY (idoption) REFERENCES choice(idoption)
 ) ENGINE=InnoDB CHARACTER SET utf8 COLLATE utf8_unicode_ci;
