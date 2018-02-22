@@ -2,17 +2,17 @@
 include 'connexion.php';
 
 //Créer une personne
-function createPerson($email, $password, $firstname, $lastname)
-{
-    $conn = connectDb();
-    $sql = "INSERT INTO person(email,password,firstname,lastname)VALUES('$email','$password','$firstname','$lastname')";
-    $conn->exec($sql);
-    var_dump($sql);
-
-
-
-
-}
+//function createPerson($email, $password, $firstname, $lastname)
+//{
+//    $conn = connectDb();
+//    $sql = "INSERT INTO person(email,password,firstname,lastname)VALUES('$email','$password','$firstname','$lastname')";
+//    $conn->exec($sql);
+//    var_dump($sql);
+//
+//
+//
+//
+//}
 //
 ////Editer l'email
 //function editEmail(&$conn, $email, $idperson)
@@ -61,7 +61,6 @@ function createPerson($email, $password, $firstname, $lastname)
 //}
 
 
-createPerson("a","b","c","d");
 
 
 

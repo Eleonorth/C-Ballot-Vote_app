@@ -26,10 +26,30 @@ function delete ($tablename,$field,$id){
 
 }
 
+
+function edit($tablename,$field,$newvalue,$wherefield, $id) {
+
+    $sql= 'UPDATE '.$tablename.' SET '.$field.' = '."'".$newvalue."'".' WHERE '.$wherefield.' = '.$id;
+    var_dump($sql);
+    $pdo= connectDb();
+    $pdo->exec($sql);
+
+}
+
+
+
 //$tablename = 'person';
 //$fields = array('email','password','firstname','lastname');
 //$data= array("'toto'","'eeee'","'eeee'","'eeee'");
 //
 //create($tablename,$fields,$data);
+//
+//delete('person',"idperson",'12');
 
-delete('person',"idperson",'11');
+//$tablename = 'person';
+//$field = "firstname";
+//$newvalue = "Baltazar";
+//$wherefield= "idperson";
+//$id = '2';
+//
+//edit($tablename,$field,$newvalue,$wherefield,$id);
