@@ -43,3 +43,12 @@ function searchPerson(&$conn,$idperson)
 {
     $conn->query("SELECT * FROM person WHERE idperson = $idperson");
 }
+
+// Rechercher une personne par l'ID de son organisation
+
+function searchByOrganization(&$conn,$idorganization)
+{
+    $conn->query("SELECT * FROM person 
+                  INNER JOIN organization ON person.idperson = organization.idperson
+                  WHERE idorganization = $idorganization");
+}
