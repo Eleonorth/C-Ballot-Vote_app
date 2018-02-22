@@ -5,10 +5,10 @@ include 'connexion.php';
 
 
 // Creation d'une organisation 
-function createOrganization(&$conn,$lastname,$name) {
+function createOrganization(&$conn,$idperson,$name) {
 
     $conn->exec('INSERT INTO `organization` (`idperson`, `name`) 
-                VALUES ( (SELECT idperson FROM person WHERE lastname = $lastname), $name)');
+                VALUES ( (SELECT idperson FROM person WHERE idperson = $idperson), $name)');
 
     echo 'Creation succeeded !';
 
