@@ -55,15 +55,29 @@ function edit($tablename,$field,$data,$wherefield, $id) {
 
 }
 
-// Fonction qui permet de rechercher un champ via un ID
-function searchById($data,$tablename,$id, $field) {
+// Fonction qui récupère le nombre d'entrées dans une table
+function getNumberofEntry($id,$tablename) {
 
-    $data_values=implode(", ",$data);
+    $sql = 'SELECT COUNT('.$id.') AS number FROM '.$tablename;
+    $pdo= connectDb();
+    $reponse = $pdo->query($sql);
+    $donnees = $reponse->fetch();
+    $number = (int) $donnees['number'];
+    return $number;
 
-    $sql = 'SELECT '.$data_values.' FROM '.$tablename.' WHERE '.$field.' = '.$id;
-
-    var_dump($sql);
 }
+
+
+
+// Fonction qui permet de rechercher un champ via un ID
+//function searchById($data,$tablename,$id, $field) {
+//
+//    $data_values=implode(", ",$data);
+//
+//    $sql = 'SELECT '.$data_values.' FROM '.$tablename.' WHERE '.$field.' = '.$id;
+//
+//    var_dump($sql);
+//}
 
 
 

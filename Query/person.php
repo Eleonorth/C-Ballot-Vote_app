@@ -14,7 +14,7 @@ function createRandomPerson() {
     $faker= Faker\Factory::create();
     $fields = array('firstname', 'lastname', 'email', 'password');
 
-    for($i=0;$i<=$nbr;$i++) {
+    for($i=0;$i<$nbr;$i++) {
 
         $data = array($faker->firstName, $faker->lastName, $faker->email, $faker->name);
         create('person', $fields, $data);
@@ -23,6 +23,13 @@ function createRandomPerson() {
     header('Location: index.php');
 }
 
+//
+//createRandomPerson();
 
-createRandomPerson();
+
+
+
+
+
+
 
