@@ -1,56 +1,30 @@
 <?php
-
-include 'connexion.php';
-
-
-
-// Creation d'une organisation 
-function createOrganization(&$conn,$idperson,$name) {
-
-    $conn->exec('INSERT INTO `organization` (`idperson`, `name`) 
-                VALUES ( $idperson, $name)');
-
-    echo 'Creation succeeded !';
-
-}
-
-// Edition d'une organisation
+include '../vendor/autoload.php';
+include 'generics.php';
 
 
-function editOrganization(&$conn,$idorganization,$newname) {
 
-    $conn->exec('UPDATE `organization` SET `name` = $newname WHERE `idorganization` = $idorganization)');
+// Creation d'une organisation
+function createOrganization() {
 
-    echo 'Edition succeeded !';
-}
+    $nb =  $_POST['nbr'];
+    $nbr = (int)$nb;
 
 
-// Suppression d'une organisation
+    $faker= Faker\Factory::create();
+    $fields = array('idperson', 'name');
 
-function deleteOrganization(&$conn,$idorganization) {
 
-    $conn->exec('DELETE FROM `organization` WHERE `idorganization` = $idorganization)');
+    $number = getNumberofEntry('idperson','person');
 
-    echo 'Deletion succeeded !';
+    for($i=0;$i<$nbr;$i++) {
 
-} 
-
-// Recherche d'une organisation par son nom 
-
-function searchOrganization(&$conn,$idperson) {
-
-    $results = $conn->query('SELECT `idorganization`, `name` FROM `organization` 
-                            INNER JOIN `person` ON `organization`.`idperson`=`person`.`idperson`
-                             WHERE `idperson` LIKE $idperson)');
-
-    while($result = $results->fetchAll()) {
-
-	    var_dump($result['idorganization'], $result['name']);
+        $data = array(rand(1,$number), $faker->name);
+        create('organization', $fields, $data);
 
     }
 
+    header('Location: index.php');
 }
 
-
-
-
+createOrganization();

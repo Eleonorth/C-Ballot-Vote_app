@@ -1,7 +1,30 @@
 <?php
 
-include 'generics.php';
 include '../vendor/autoload.php';
+include 'generics.php';
+
+
+function createRandomCampaign() {
+
+    $nb =  $_POST['nbr'];
+    $nbr = (int)$nb;
+
+
+    $faker= Faker\Factory::create();
+    $fields = array('idorganization', 'name', 'startdate', 'enddate', 'numberoptions');
+
+
+    $number = getNumberofEntry('idorganization', 'organization');
+
+    for($i=0;$i<$nbr;$i++) {
+
+        $data = array(rand(1,$number), $faker->name, '2018-02-01 00:00:00', '2018-02-26 00:00:00', $faker->randomDigitNotNull);
+        create('campaign', $fields, $data);
+    }
+
+     header('Location: index.php');
+
+}
 
 
 // Recherche le nombre d'options à créer dans une campagne
@@ -39,4 +62,5 @@ function createRandomChoices() {
 
 }
 
+createRandomCampaign();
 createRandomChoices();

@@ -6,28 +6,32 @@ include 'generics.php';
 
 
 // Génère des invitations par mail
-function sentInvitations() {
 
-    // mails aléatoires
-    // code aléatoires
-    // emailsent = 0 pour false et 1 pour true aléatoire
+function sentInvitations(){
 
-
-    $nb =  $_POST['nbrinvite'];
+    $nb =  $_POST['nbr'];
     $nbr = (int)$nb;
 
-    var_dump($nbr);
     $faker= Faker\Factory::create();
-    $fields = array('idcampaign', 'email', 'code', 'emailsent');
+    $fields = array('idcampaign', 'email', 'code', 'emailsent','hasvoted');
 
-    for($i=0;$i<=$nbr;$i++) {
+    $nbtask = getNumberofEntry(idcampaign,campaign);
 
-        $data = array(1, $faker->email, rand(0,100),rand(0,1));
+
+    for($ii=1;$ii<=$nbtask;$ii++){
+
+        for($i = 0 ; $i < $nbr ; $i ++){
+
+        $data = array(rand(1,$nbtask), $faker->email, rand(0, 100), rand(0, 1),rand(0, 1));
         create('invitation', $fields, $data);
+
+        }
     }
 
     header('Location: index.php');
 }
+//
+//sentInvitations();
 
 
-sentInvitations();
+

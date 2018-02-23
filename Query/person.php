@@ -23,8 +23,8 @@ function createRandomPerson() {
     header('Location: index.php');
 }
 
-//
-//createRandomPerson();
+
+createRandomPerson();
 
 
 
