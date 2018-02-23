@@ -1,23 +1,41 @@
 <?php
-
-include 'connexion.php';
+include '../vendor/autoload.php';
+include 'generics.php';
 
 
 
 // Creation d'une organisation 
-function createOrganization(&$conn,$idperson,$name) {
+function createOrganization() {
 
-    $conn->exec('INSERT INTO `organization` (`idperson`, `name`) 
-                VALUES ( $idperson, $name)');
+    $nb =  $_POST['nbrinvite'];
+    $nbr = (int)$nb;
 
-    echo 'Creation succeeded !';
 
+    $faker= Faker\Factory::create();
+    $fields = array('idperson', 'name');
+
+    $sql = 'SELECT COUNT(idperson) AS number FROM organization';
+    $pdo = connectDb();
+    $reponse = $pdo->query($sql);
+    $donnees = $reponse->fetch();
+    $number = (int) $donnees['number'];
+
+    for($i=0;$i<$nbr;$i++) {
+
+        $data = array(rand(1,$number), $faker->name);
+        create('organization', $fields, $data);
+
+    }
+
+    header('Location: index.php');
 }
+
+createOrganization();
 
 // Edition d'une organisation
 
 
-function editOrganization(&$conn,$idorganization,$newname) {
+/*function editOrganization(&$conn,$idorganization,$newname) {
 
     $conn->exec('UPDATE `organization` SET `name` = $newname WHERE `idorganization` = $idorganization)');
 
@@ -49,7 +67,7 @@ function searchOrganization(&$conn,$idperson) {
 
     }
 
-}
+}*/
 
 
 

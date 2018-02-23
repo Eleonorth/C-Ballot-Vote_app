@@ -21,4 +21,3 @@ function connectDb()
 
     return $conn;
 }
-

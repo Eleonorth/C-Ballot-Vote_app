@@ -16,7 +16,7 @@
 </form>
 
 
-<form action="invitation.php" method="post">
+<form action="organization.php" method="post">
     <input type="number" name="nbrinvite">
     <button type="submit">Création fausse donnée</button>
 </form>
