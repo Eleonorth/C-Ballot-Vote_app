@@ -28,7 +28,7 @@ function create($tablename,$fields,$data) {
 function delete ($tablename,$field,$id){
 
     $sql= 'DELETE FROM '.$tablename.' WHERE '.$field.'='.$id;
-    var_dump($sql);
+  
     $pdo = connectDb();
     $pdo->exec($sql);
 
@@ -82,15 +82,5 @@ function getNumberofEntry($id,$tablename) {
 
 
 
-//function : simuler un vote avec un booléen : en passer aléatoirement à true ou false
 
-//function : envoyer les résultats des votes dans la table vote (id aléatoire)
-
-//function : clôturer la campagne
-
-//function : supprimer les données du compte organisateur => personne, son organisation et les campagnes liées
-
-//function : le code est-il toujours valide ?
-
-//function : que faut-il faire pour s'assurer qu'on ne conserve pas les mails du votant ?
 

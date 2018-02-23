@@ -30,8 +30,8 @@ function sentInvitations(){
 
     header('Location: index.php');
 }
-//
-//sentInvitations();
+
+sentInvitations();
 
 
 
