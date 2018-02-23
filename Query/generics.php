@@ -28,7 +28,7 @@ function create($tablename,$fields,$data) {
 function delete ($tablename,$field,$id){
 
     $sql= 'DELETE FROM '.$tablename.' WHERE '.$field.'='.$id;
-  
+
     $pdo = connectDb();
     $pdo->exec($sql);
 

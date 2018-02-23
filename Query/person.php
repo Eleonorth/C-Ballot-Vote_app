@@ -51,10 +51,10 @@ function deletePerson($id){
 }
 
 
-//createRandomPerson();
+createRandomPerson();
 
-
-deletePerson(6);
+//
+//deletePerson(6);
 
 
 
