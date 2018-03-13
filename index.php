@@ -11,8 +11,8 @@
 </head>
 <body>
 
-<form action="Services/createOrganization.php" method="post">
-    <input placeholder="Nom de l'organisation"  type="text" name="name">
+<form action="Services/createCampaign.php" method="post">
+    <input placeholder="Nom de la campagne"  type="text" name="name">
     <button class="btn btn-primary" type="submit">Valider</button>
 </form>
 
