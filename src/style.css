@@ -2,7 +2,9 @@
 nav h1 {
     font-family: 'Finger Paint', cursive;
     text-align: center;
-    font-size: 120px;
+    font-size: 100px;
+    float: right;
+    padding-left:300px;
 }
 
 html {
@@ -14,8 +16,23 @@ html {
 body {
     min-height: 100%;
     background-color: #DAF7A6;
-    font-family: 'PT Sans Narrow', sans-serif;
+    /*font-family: 'PT Sans Narrow', sans-serif;*/
     position: relative;
+}
+
+#description {
+    text-align: center;
+    border-style: solid;
+    border-radius: 10px;
+    border-color: #F3193A;
+    margin: 80px 200px 80px 200px;
+    padding: 10px;
+    background-color: #F4F4F4;
+
+}
+
+#login, #register {
+    display: inline-block;
 }
 
 footer {

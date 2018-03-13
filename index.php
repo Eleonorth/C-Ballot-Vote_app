@@ -22,7 +22,14 @@ session_start();
         </a>
     </nav>
 
-    <div class="login" style="padding-bottom: 5%;">
+    <div id="description">
+        <h2>Qui sommes-nous ?</h2>
+        <p>C-Ballot est une plateforme de vote en ligne qui vous permet de créer une organisation ainsi que des campagnes de votes</p>
+
+    </div>
+
+    <div id="login">
+        <h2>Se connecter</h2>
         <form action="../Services/login.php"  method="post">
             <label>Email :</label>
             <input type="email" name="email">
@@ -34,7 +41,8 @@ session_start();
         </form>
     </div>
 
-    <div class="register">
+    <div id="register">
+        <h2>S'inscrire</h2>
         <form action="../Services/signup.php" method="post">
             <label>Nom :</label>
             <input type="text" name="lastname">
