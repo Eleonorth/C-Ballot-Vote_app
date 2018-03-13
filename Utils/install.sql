@@ -1,7 +1,7 @@
 CREATE TABLE IF NOT EXISTS `person`(
         idperson  int (11) Auto_increment  NOT NULL ,
         email     Varchar (40) ,
-        password  Varchar (25) ,
+        password  Varchar (200) ,
         firstname Varchar (20) ,
         lastname  Varchar (20) ,
         PRIMARY KEY (idperson)

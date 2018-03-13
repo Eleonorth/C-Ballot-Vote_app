@@ -8,7 +8,7 @@ include '../Utils/generics.php';
 function createOrganization() {
 
     $name =  $_POST['name'];
-    $userId = $_SESSION['id'];
+    $userId = $_SESSION['idperson'];
     $fields = array('idperson', 'name');
     $data = array($userId,$name);
 
@@ -23,7 +23,23 @@ function editOrganization(){
 
     $field= array('name');
     $data = array($newName);
+    $wherefield = 'idorganization';
+    $id = 1;
+
 
     edit('organization', $field,$data,$wherefield,$id);
 
 }
+
+
+// Suppression d'une organisation
+function deleteOrganization() {
+
+    $field='idorganzation';
+    $id = 1;
+
+    delete('organization',$field,$id);
+
+}
+
+createOrganization();

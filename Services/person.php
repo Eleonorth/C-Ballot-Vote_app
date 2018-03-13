@@ -1,25 +1,17 @@
 <?php
 
+
 include '../Utils/generics.php';
 
 
 // Créer des profils aléatoires selon un nombre donné
-function createRandomPerson() {
+function createPerson($lastname, $firstname, $email, $mdp) {
 
-    $nb =  $_POST['nbr'];
-    $nbr = (int)$nb;
-
-    var_dump($nbr);
-    $faker= Faker\Factory::create();
     $fields = array('firstname', 'lastname', 'email', 'password');
 
-    for($i=0;$i<$nbr;$i++) {
+    $data = array($firstname, $lastname, $email, $mdp);
+    create('person', $fields, $data);
 
-        $data = array($faker->firstName, $faker->lastName, $faker->email, $faker->name);
-        create('person', $fields, $data);
-    }
-
-    header('Location: index.php');
 }
 
 
@@ -50,11 +42,10 @@ function deletePerson($id){
 }
 
 
-createRandomPerson();
+// createRandomPerson();
 
 //
 //deletePerson(6);
-
 
 
 
