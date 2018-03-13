@@ -7,6 +7,10 @@ nav h1 {
     padding-left:300px;
 }
 
+nav {
+    height: 120px;
+}
+
 html {
     height: 100%;
 }
@@ -20,9 +24,12 @@ body {
     position: relative;
 }
 
-#description {
+#description h2 {
     text-align: center;
-    border-style: solid;
+}
+
+#description {
+    border: 4px solid;
     border-radius: 10px;
     border-color: #F3193A;
     margin: 80px 200px 80px 200px;
@@ -31,8 +38,7 @@ body {
 
 }
 
-#login, #register {
-    display: inline-block;
+#register, #login {
 }
 
 footer {
