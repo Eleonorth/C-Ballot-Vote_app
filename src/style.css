@@ -1,0 +1,29 @@
+
+nav h1 {
+    font-family: 'Finger Paint', cursive;
+    text-align: center;
+    font-size: 120px;
+}
+
+html {
+    height: 100%;
+}
+
+/*border-color: #F3193A;*/
+
+body {
+    min-height: 100%;
+    background-color: #DAF7A6;
+    font-family: 'PT Sans Narrow', sans-serif;
+    position: relative;
+}
+
+footer {
+    background-color: #1b1e21;
+    color: #fff;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
