@@ -15,9 +15,9 @@ session_start();
 
     <?php
 
-    $sql = ' SELECT name FROM organization WHERE idperson = $_SESSION['id']';
+    $sql = " SELECT name FROM organization WHERE `idperson` = '6'";
     $pdo = connectDb();
-    $data = $pdo->exec($sql);
+    $data = $pdo->query($sql);
 
        ?>
 

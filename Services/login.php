@@ -15,6 +15,8 @@ function fieldConnection() {
         connection($login, md5($password));
     }
 
+
+
 }
 
 //Fonction qui permet de se connecter
@@ -34,7 +36,7 @@ function connection($login, $password) {
     //Compare les éléments récupérés avec les éléments entrés : sont-ils les mêmes?
     if ($sqlmail_fetch['email'] == $login && $sqlpwd_fetch['password'] == $password) {
         $_SESSION['idperson'] = $sqlmail_fetch['idperson'];
-        header('Location:../Vues/organization.php');
+        header('Location:../Vues/test.php');
     } else {
         echo "FUCK !!!!!";
     }
