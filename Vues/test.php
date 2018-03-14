@@ -21,7 +21,7 @@ session_start();
     $profile= $pdo->query($request);
 
 
-    $sql = " SELECT name FROM organization WHERE `idperson` = $id";
+    $sql = " SELECT name, idorganization FROM organization WHERE `idperson` = $id";
     $data = $pdo->query($sql);
 
     $sql2 = " SELECT organization.name, campaign.name, startdate, enddate FROM campaign
@@ -54,12 +54,10 @@ $user = $profile->fetch();
 
             ?>
             <tr>
-                <td><?php echo $results['name']?></td>
+                <td><?php echo $results['name']?> <a href="test2.php?id=<?php echo $results[1]?>">Créer une campagne</a> </td>
             </tr>
             <?php
         } ?>
-
-
 
 
         </tbody>
@@ -95,11 +93,6 @@ $user = $profile->fetch();
         </tbody>
     </table>
 
-
-<form action="../Services/createCampaign.php" method="post">
-    <input placeholder="Nom de la campagne"  type="text" name="name">
-    <button class="btn btn-primary" type="submit">Valider</button>
-</form>
 
 
 </body>

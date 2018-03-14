@@ -32,8 +32,8 @@ CREATE TABLE IF NOT EXISTS `campaign` (
 CREATE TABLE IF NOT EXISTS `invitation` (
   idinvitation INT NOT NULL AUTO_INCREMENT,
   idcampaign INT,
-  email VARCHAR (255) NOT NULL UNIQUE,
-  code INT (10) NOT NULL,
+  email VARCHAR (255) NOT NULL,
+  code VARCHAR (100) NOT NULL,
   emailsent TINYINT (1) NOT NULL,
   hasvoted TINYINT (1) NOT NULL,
   PRIMARY KEY (idinvitation),

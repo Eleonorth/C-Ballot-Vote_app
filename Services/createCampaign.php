@@ -8,36 +8,32 @@ include '../Utils/generics.php';
 
 // Crée une campagne de vote liée à une organisation (et donc à un compte utilisateur)
 // Définit les choix
-// Envoie les invitations
-
-
 function createCampaign() {
 
+    $idorganization = $_POST['id'];
     $name = $_POST['name'];
     $fields =array('idorganization','name','startdate','enddate','numberoptions');
-    $data=array(2,$name,'2018-03-07','2018-03-07',4);
+    $data=array($idorganization,$name,'2018-03-07','2018-03-07',4);
 
    $newid= create('campaign',$fields,$data);
 
-   echo $newid;
+   $options = $_POST['textarea'];
+
+   echo $options;
+   return $newid;
 
 }
 
 
 
+// Crée la campagne et envoie les invitations
+function sentInvites() {
 
-//
-//// générer le code unique pour les invitations : md5(uniqid());
-//
-//
-//function sentInvites() {
-//
-//    $fields = array('idcampaign', 'email', 'code', 'emailsent','hasvoted');
-//    $data = array();
-//    create('invitation', $fields, $data);
-//
-//
-//}
+    $idcampaign = createCampaign();
+    $fields = array('idcampaign', 'email', 'code', 'emailsent','hasvoted');
+    $data = array($idcampaign,'zut',md5(uniqid()),'1','0');
+    create('invitation', $fields, $data);
 
-createCampaign();
+}
 
+sentInvites();

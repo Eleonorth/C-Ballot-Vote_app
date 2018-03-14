@@ -28,7 +28,7 @@ $profile= $pdo->query($request);
 $sql = " SELECT name FROM organization WHERE idperson = $id";
 $data = $pdo->query($sql);
 
-$sql2 = " SELECT organization.name, campaign.name, startdate, enddate FROM campaign
+$sql2 = " SELECT organization.name, campaign.name, startdate, enddate, person.idperson FROM campaign
                   INNER JOIN organization ON campaign.idorganization=organization.idorganization 
                   INNER JOIN person ON organization.idperson=person.idperson
                   WHERE person.idperson = $id
