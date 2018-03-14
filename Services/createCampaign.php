@@ -22,7 +22,6 @@ function createCampaign() {
 
 }
 
-
 // Définit les choix
 
 // Crée la campagne et envoie les invitations
