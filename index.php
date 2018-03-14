@@ -35,7 +35,6 @@ session_start();
                     Vous pouvez donc ouvrir une campagne, ajouter des choix de votes et une liste de votants, et le tour est joué !
                     <br>
                     Et si vous changez d'avis, vous pouvez arrêter une campagne à tous moments.
-
                 </p>
             </div>
             <div class="col-0 col-sm-0 col-md-1 col-lg-1 col-xl-1"></div>
@@ -55,11 +54,11 @@ session_start();
 
                     <div class="container">
                         <div class="row">
-                            <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4"></div>
-                            <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+                            <div class="col"></div>
+                            <div class="col">
                                 <button type="submit" class="btn btn-light">Connexion</button>
                             </div>
-                            <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4"></div>
+                            <div class="col"></div>
                         </div>
                     </div>
 
@@ -87,11 +86,11 @@ session_start();
 
                     <div class="container">
                         <div class="row">
-                            <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4"></div>
-                            <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+                            <div class="col"></div>
+                            <div class="col">
                                 <button type="submit" class="btn btn-light">S'inscrire</button>
                             </div>
-                            <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4"></div>
+                            <div class="col"></div>
                         </div>
                     </div>
 
