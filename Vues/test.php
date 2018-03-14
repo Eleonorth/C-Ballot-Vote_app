@@ -1,5 +1,5 @@
 <?php
-include '../Utils/Connexion.php';
+include '../Utils/connexion.php';
 
 session_start();
 
