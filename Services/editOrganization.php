@@ -4,7 +4,7 @@ include '../Utils/generics.php';
 
 // Crée une campagne de vote liée à une organisation (et donc à un compte utilisateur)
 
-function editCampaign() {
+function editOrganization() {
 
     $idorganization = $_POST['id'];
     $startdate= $_POST['startdate'];

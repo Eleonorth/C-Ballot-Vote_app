@@ -40,9 +40,9 @@ $datas = $pdo->query($sql2);
 
 <nav class="navbar navbar-light bg-light">
     <a class="navbar-brand" href="../index.php">
-        <img src="../src/logo.png" width="200" height="100" class="d-inline-block align-center" alt="">
-        <h1>C-Ballot</h1>
+        <img src="../src/logo.png" width="200" height="100" class="d-inline-block align-top" alt="">
     </a>
+    <h1>C-Ballot</h1>
 </nav>
 
 <!-- div info personne + edit/delete -->
@@ -83,7 +83,7 @@ $datas = $pdo->query($sql2);
             <div class="col-lg-3" style="padding: 0;"><!-- Button trigger modal -->
                 <div style="float: right;">
                     <button type="button" class="btn btn-light" data-toggle="modal" data-target="#exampleModalCenter">
-                        Organisation <img src="../src/add.png" style="margin-left: 2px;">
+                        Ajouter une organisation <img src="../src/add.png" style="margin-left: 2px;">
                     </button>
 
                     <!-- Modal -->

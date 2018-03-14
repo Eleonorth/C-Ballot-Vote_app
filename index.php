@@ -18,8 +18,8 @@ session_start();
 <nav class="navbar navbar-light bg-light">
     <a class="navbar-brand" href="index.php">
         <img src="src/logo.png" width="200" height="100" class="d-inline-block align-top" alt="">
-        <h1>C-Ballot</h1>
     </a>
+    <h1>C-Ballot</h1>
 </nav>
 
 <div class="container">
