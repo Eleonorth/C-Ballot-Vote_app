@@ -18,9 +18,31 @@ session_start();
     $sql = ' SELECT name FROM organization WHERE idperson = $_SESSION['id']';
     $pdo = connectDb();
     $data = $pdo->exec($sql);
-    
+
        ?>
 
+<table>
+    <thread>
+        <tr>
+            <th>Nom de l'organisation</th>
+        </tr>
+    </thread>
+<tbody>
+<?php
+    while ($results = $data->fetch()){
+
+        ?>
+<tr>
+    <td><?php echo $results['name']?></td>
+</tr>
+<?php
+} ?>
+
+
+
+
+</tbody>
+</table>
 
 </body>
 </html>
