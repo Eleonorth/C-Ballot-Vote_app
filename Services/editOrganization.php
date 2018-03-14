@@ -6,18 +6,12 @@ include '../Utils/generics.php';
 
 function editOrganization() {
 
-    $idorganization = $_POST['id'];
-    $startdate= $_POST['startdate'];
-    $enddate= $_POST['enddate'];
-    $numberoptions= $_POST['numberoptions'];
+    $name =  $_POST['name'];
+    $userId = $_SESSION['idperson'];
+    $fields = array('idperson', 'name');
+    $data = array($userId,$name);
 
-
-    $name = $_POST['name'];
-    $fields =array('idorganization','name','startdate','enddate','numberoptions');
-    $data=array($idorganization,$name,$startdate,$enddate,$numberoptions);
-
-    $newid= create('campaign',$fields,$data);
-
-    return $newid;
-
+    create('organization', $fields, $data);
+    header('Location:../Vues/profile.php');
 }
+
