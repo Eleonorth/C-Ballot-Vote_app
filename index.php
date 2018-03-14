@@ -9,7 +9,7 @@ session_start();
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link href="src/style.css" rel="stylesheet" >
-    <link href="https://fonts.googleapis.com/css?family=Finger+Paint|PT+Sans+Narrow" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Finger+Paint" rel="stylesheet">
     <title>C-Ballot</title>
 </head>
 
@@ -25,7 +25,8 @@ session_start();
 <div class="container">
 
     <div class="row">
-        <div id="description" class="col">
+        <div class="col-0 col-sm-0 col-md-1 col-lg-1 col-xl-1"></div>
+        <div id="description" class="col-12 col-sm-12 col-md-10 col-lg-10 col-xl-10">
             <h2>Qui sommes-nous ?</h2>
             <p>
                 C-Ballot est une plateforme de vote en ligne qui vous permet de créer une organisation
@@ -34,14 +35,14 @@ session_start();
                 Vous pouvez donc ouvrir une campagne, ajouter des choix de votes et une liste de votants, et le tour est joué !
                 <br>
                 Et si vous changez d'avis, vous pouvez arrêter une campagne à tous moments.
-
             </p>
         </div>
+        <div class="col-0 col-sm-0 col-md-1 col-lg-1 col-xl-1"></div>
     </div>
 
     <div class="row">
 
-        <div id="login" class="col">
+        <div id="login" class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
             <h2>Se connecter</h2>
             <form class="form-group" action="Services/login.php"  method="post">
                 <label>Email :</label>
@@ -49,18 +50,28 @@ session_start();
 
                 <label>Mot de passe :</label>
                 <input type="password" name="mdp" class="form-control">
-                <br>
-                <button type="submit">Connexion</button>
+                <hr>
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col"></div>
+                        <div class="col">
+                            <button type="submit" class="btn btn-light">Connexion</button>
+                        </div>
+                        <div class="col"></div>
+                    </div>
+                </div>
+
             </form>
         </div>
 
-        <div id="register" class="col">
+        <div id="register" class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
             <h2>S'inscrire</h2>
             <form class="form-group" action="Services/signup.php" method="post">
                 <label>Nom :</label>
                 <input type="text" name="lastname" class="form-control">
 
-                <label>Prénom</label>
+                <label>Prénom :</label>
                 <input type="text" name="firstname" class="form-control">
 
                 <label>Email :</label>
@@ -71,14 +82,24 @@ session_start();
 
                 <label>Confirmation mot de passe :</label>
                 <input type="password" name="confirmMdp" class="form-control">
-                <br>
-                <button type="submit">S'inscrire</button>
+                <hr>
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col"></div>
+                        <div class="col">
+                            <button type="submit" class="btn btn-light">S'inscrire</button>
+                        </div>
+                        <div class="col"></div>
+                    </div>
+                </div>
+
             </form>
         </div>
+
     </div>
 
-    <div class="row">allo</div>
-
+    <div class="row"><br></div>
 
 
     <footer>
