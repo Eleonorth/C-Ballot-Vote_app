@@ -21,7 +21,9 @@ function create($tablename,$fields,$data) {
 
     $pdo = connectDb();
     $pdo->exec($sql);
-// return last instert id
+    $newId = $pdo->lastInsertId();
+    return $newId;
+
 }
 
 // Fonction générique qui permet de supprimer un champ dans un table

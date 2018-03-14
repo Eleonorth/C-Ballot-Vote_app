@@ -14,21 +14,13 @@ include '../Utils/generics.php';
 function createCampaign() {
 
     $name = $_POST['name'];
-
+    $fields =array('idorganization','name','startdate','enddate','numberoptions');
     $data=array(2,$name,'2018-03-07','2018-03-07',4);
 
-    for ($i=0;$i<count($data);$i++) {
+   $newid= create('campaign',$fields,$data);
 
-        $data[$i] = "'" . $data[$i] . "'";
-    }
-    $data_values=implode(',',$data);
+   echo $newid;
 
-    $sql= "INSERT INTO `campaign` (idorganization, name, startdate, enddate, numberoptions) VALUES'.'('.$data_values.')";
-
-    $pdo = connectDb();
-    $pdo->exec($sql);
-    $newId = $pdo->lastInsertId();
-    echo $newId;
 }
 
 

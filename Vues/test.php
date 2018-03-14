@@ -13,22 +13,34 @@ session_start();
 </head>
 <body>
 
-    <?php
+<?php
     $id = $_SESSION['idperson'];
-    $sql = " SELECT name FROM organization WHERE `idperson` = $id";
     $pdo = connectDb();
+
+    $request = "SELECT firstname, lastname, email FROM person WHERE idperson = $id";
+    $profile= $pdo->query($request);
+
+
+    $sql = " SELECT name FROM organization WHERE `idperson` = $id";
     $data = $pdo->query($sql);
 
     $sql2 = " SELECT organization.name, campaign.name, startdate, enddate FROM campaign
-              INNER JOIN organization ON campaign.idorganization=organization.idorganization 
-              INNER JOIN person ON organization.idperson=person.idperson
-              WHERE person.idperson = $id
-              ORDER BY campaign.idorganization ASC";
-    $pdo = connectDb();
+                  INNER JOIN organization ON campaign.idorganization=organization.idorganization 
+                  INNER JOIN person ON organization.idperson=person.idperson
+                  WHERE person.idperson = $id
+                  ORDER BY campaign.idorganization ASC";
     $datas = $pdo->query($sql2);
 
 
-    ?>
+?>
+
+<?php
+$user = $profile->fetch();
+?>
+<p> Nom : <?php echo $user['lastname'] ?></p>
+<p> Prénom : <?php echo $user['firstname'] ?> </p>
+<p> Adresse mail : <?php echo $user['email'] ?></p>
+
 
 <table>
         <thread>
@@ -82,6 +94,12 @@ session_start();
 
         </tbody>
     </table>
+
+
+<form action="../Services/createCampaign.php" method="post">
+    <input placeholder="Nom de la campagne"  type="text" name="name">
+    <button class="btn btn-primary" type="submit">Valider</button>
+</form>
 
 
 </body>

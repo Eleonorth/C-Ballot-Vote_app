@@ -1,0 +1,63 @@
+
+nav h1 {
+    font-family: 'Finger Paint', cursive;
+    text-align: center;
+    font-size: 80px;
+    float: right;
+    padding-left:300px;
+    margin: 0px;
+}
+
+nav {
+}
+
+html {
+    height: 100%;
+    padding: 0px;
+}
+
+/*border-color: #F3193A;*/
+
+body {
+    min-height: 100%;
+    background-color: #CCF359;
+    /*font-family: 'PT Sans Narrow', sans-serif;*/
+    position: relative;
+}
+
+#description h2 {
+    text-align: center;
+}
+
+#description {
+    border: 4px solid;
+    border-radius: 10px;
+    border-color: #F3193A;
+    margin: 80px 200px 80px 200px;
+    padding: 10px;
+    background-color: #F4F4F4;
+}
+
+#register h2, #login h2 {
+    text-align: center;
+}
+
+footer {
+    background-color: #1b1e21;
+    color: #fff;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+#IDinfo{
+    margin-top: 2%;
+}
+#IDorga{
+    margin-top: 2%;
+}
+#IDcampaign{
+    margin-top: 2%;
+}
