@@ -101,6 +101,7 @@ session_start();
 
         <div class="row"><br></div>
 
+
     <footer>
         C-Ballot &#169; 2018 - Hein Team
     </footer>

@@ -14,7 +14,7 @@ function verifMail() {
     $sql = $pdo->query("SELECT email FROM person WHERE email ='".$email."'");
     $sql_fetch = $sql->fetch();
 
-    //Condition qui permet de comparer l'adresse entré et celle déjè présente
+    //Condition qui permet de comparer l'adresse entrée et celles déjà présentes
     if ($sql_fetch['email'] != $email) {
         checkField($email);
     }
@@ -25,7 +25,7 @@ function verifMail() {
 //Fonction qui va vérifier les champs pour l'inscription
 function checkField($email) {
 
-    //Tous les postes mis en variables
+    //Tous les post mis en variables
     $lastname = $_POST['lastname'];
     $firstname = $_POST['firstname'];
     $mdp = $_POST['mdp'];
