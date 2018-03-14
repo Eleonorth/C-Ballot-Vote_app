@@ -23,7 +23,7 @@ session_start();
 =======
     <nav class="navbar navbar-light bg-light">
         <a class="navbar-brand" href="index.html">
-            <img src="src/logo.png" width="200" height="100" class="d-inline-block align-center" alt="">
+            <img src="src/logo.png" width="200" height="100" class="d-inline-block align-top" alt="">
             <h1>C-Ballot</h1>
         </a>
     </nav>
@@ -55,7 +55,7 @@ session_start();
 
                     <label>Mot de passe :</label>
                     <input type="password" name="mdp" class="form-control">
-
+                    <br>
                     <button type="submit">Connexion</button>
                 </form>
             </div>
@@ -77,7 +77,7 @@ session_start();
 
                     <label>Confirmation mot de passe :</label>
                     <input type="password" name="confirmMdp" class="form-control">
-
+                    <br>
                     <button type="submit">S'inscrire</button>
                 </form>
             </div>
