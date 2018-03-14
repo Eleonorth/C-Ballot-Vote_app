@@ -15,12 +15,12 @@ session_start();
 
 <body>
 
-<<<<<<< HEAD
+
 <form action="Services/createCampaign.php" method="post">
     <input placeholder="Nom de la campagne"  type="text" name="name">
     <button class="btn btn-primary" type="submit">Valider</button>
 </form>
-=======
+
     <nav class="navbar navbar-light bg-light">
         <a class="navbar-brand" href="index.html">
             <img src="src/logo.png" width="200" height="100" class="d-inline-block align-top" alt="">
@@ -85,7 +85,7 @@ session_start();
 
         <div class="row">allo</div>
 
->>>>>>> 85f31a9621b559472a6005ceb02d2a001cf7edcf
+
 
     <footer>
         C-Ballot &#169; 2018 - Hein Team
