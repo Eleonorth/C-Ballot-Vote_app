@@ -16,13 +16,17 @@ function verifMail() {
 
     //Condition qui permet de comparer l'adresse entrée et celles déjà présentes
     if ($sql_fetch['email'] != $email) {
+        
         checkField($email);
+    } else {
+
+        $_SESSION['error_message'] = "Email déjà existant veuillez choisir une autre adresse";
+        header('Location:../index.php');
     }
 
 }
 
-
-//Fonction qui va vérifier les champs pour l'inscription
+//Fonction qui permet d'inscrire une personne dans la base de données
 function checkField($email) {
 
     //Tous les post mis en variables
@@ -31,14 +35,8 @@ function checkField($email) {
     $mdp = $_POST['mdp'];
     $mdpConfirm = $_POST['confirmMdp'];
 
-    if (!empty($lastname) || !empty($firstname) || !empty($email) || !empty($mdp) || !empty($mdpConfirm)) {
-
-        if ($mdp == $mdpConfirm) {
             //Envoie à la fonction qui permet d'enregistrer l'utilisateur dans la bdd
-            createPerson($lastname, $firstname, $email, md5($mdp));
-
-        }
-    }
+    createPerson($lastname, $firstname, $email, md5($mdp));
 
 }
 
