@@ -34,19 +34,12 @@ session_start();
                 <label for="campaignName">Nom de la campagne :</label>
                 <input type="text" id="campaignName" name="" class="form-control">
 
-                <label for="startDate">Date de début :</label>
-                <input type="date" id="startDate" name="" class="form-control">
-
-                <label for="endDate">Date de fin :</label>
-                <input type="date" id="endDate" name="" class="form-control">
-
                 <label for="optionsNb">Nombre d'options de vote :</label>
                 <input type="number" id="optionsNb" name="" class="form-control">
 
                 <label for="options">Options de vote : </label>
                 <input type="text" id="options" name="" class="form-control">
                 <span><img src="../src/plus.svg" width="19" height="19" alt="Ajouter une option"> Ajouter une option</span>
-
 
                 <label for="emails">Emails des votants :</label>
                 <textarea id="emails" name="" class="form-control"></textarea>

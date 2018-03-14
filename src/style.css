@@ -57,3 +57,28 @@ footer {
     right: 0;
     left: 0;
 }
+
+#IDinfo{
+    margin-top: 2%;
+}
+#IDorga{
+    margin-top: 2%;
+}
+#IDcampaign{
+    margin-top: 2%;
+}
+
+.resTab{
+    background-color: #4bd6d4;
+    border-radius: 5px;
+}
+
+/* A modifier , j'arrive pas a tout bien mettre */
+#editPro{
+    margin-top: auto;
+    margin-bottom: auto;
+}
+#deletePro{
+    margin-top: auto;
+    margin-bottom: auto;
+}
