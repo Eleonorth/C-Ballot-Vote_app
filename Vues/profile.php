@@ -127,8 +127,8 @@ $datas = $pdo->query($sql2);
                         ?>
                         <tr>
                             <td><?php echo $results['name']?></td>
-                            <td><a href="test.php">Editer</a></td>
-                            <td><a href="test.php">Supprimer</a></td>
+                            <td><a href="editOrganization.php?id=<?php echo $results[1]?>">Editer</a></td>
+                            <td><a href="editOrganization.php?id=<?php echo $results[1]?>">Supprimer</a></td>
                             <td><a href="createCampaign.php?id=<?php echo $results[1]?>">Créer une campagne</a></td>
                         </tr>
                         <?php

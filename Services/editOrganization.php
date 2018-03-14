@@ -2,16 +2,16 @@
 include '../Utils/generics.php';
 
 
-// Crée une campagne de vote liée à une organisation (et donc à un compte utilisateur)
+// Edite une organisation
 
 function editOrganization() {
 
-    $name =  $_POST['name'];
-    $userId = $_SESSION['idperson'];
-    $fields = array('idperson', 'name');
-    $data = array($userId,$name);
-
-    create('organization', $fields, $data);
+    $name =  $_POST['newname'];
+    $field = array('name');
+    $data = array($name);
+    $id = $_POST['id'];
+    edit('organization',$field,$data,'organization.idorganization', $id);
     header('Location:../Vues/profile.php');
+
 }
 
