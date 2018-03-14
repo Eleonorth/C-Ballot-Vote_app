@@ -39,8 +39,8 @@ $datas = $pdo->query($sql2);
 ?>
 
 <nav class="navbar navbar-light bg-light">
-    <a class="navbar-brand" href="index.html">
-        <img src="/src/logo.png" width="200" height="100" class="d-inline-block align-center" alt="">
+    <a class="navbar-brand" href="../index.php">
+        <img src="../src/logo.png" width="200" height="100" class="d-inline-block align-center" alt="">
         <h1>C-Ballot</h1>
     </a>
 </nav>
@@ -50,7 +50,7 @@ $datas = $pdo->query($sql2);
     <div class="row">
         <div class="col-lg-6" id="persoInfo">
             <div class="col-lg-8">
-                <img src="/src/user.png" width="256" height="256">
+                <img src="../src/user.png" width="256" height="256">
                 <?php
                 $user = $profile->fetch();
                 ?>
@@ -70,7 +70,7 @@ $datas = $pdo->query($sql2);
         <div class="col-lg-4"><h3>Mes organisations :</h3></div>
         <div class="col-lg-8"><!-- Button trigger modal -->
             <button type="button" class="btn btn-light" data-toggle="modal" data-target="#exampleModalCenter">
-                Ajouter une organisation <img src="src/add.png" style="margin-left: 2px;">
+                Ajouter une organisation <img src="../src/add.png" style="margin-left: 2px;">
             </button>
 
             <!-- Modal -->
@@ -84,7 +84,7 @@ $datas = $pdo->query($sql2);
                             </button>
                         </div>
                         <div class="modal-body">
-                            <form action="Services/createOrganization.php" method="post">
+                            <form action="../Services/createOrganization.php" method="post">
 
                                 <input type="text" name="name">
                                 <div class="modal-footer">
@@ -126,7 +126,7 @@ $datas = $pdo->query($sql2);
     <div class="row">
         <div class="col-lg-4"><h3>Mes campagnes :</h3></div>
         <div class="col-lg-8"><button type="button" class="btn btn-light">
-                Ajouter une campagne <img src="src/add.png" style="margin-left: 2px;">
+                Ajouter une campagne <img src="../src/add.png" style="margin-left: 2px;">
             </button></div>
     </div>
     <div class="row">
