@@ -15,7 +15,7 @@ session_start();
 
 <body>
     <nav class="navbar navbar-light bg-light">
-        <a class="navbar-brand" href="index.php">
+        <a class="navbar-brand" href="../index.php">
             <img src="../src/logo.png" width="200" height="100" class="d-inline-block align-top" alt="">
         </a>
         <h1>C-Ballot</h1>
@@ -49,7 +49,7 @@ session_start();
 
 
                     <label for="emails">Emails des votants :</label>
-                    <textarea id="emails" class="form-control"></textarea>
+                    <textarea id="emails" name ="" class="form-control"></textarea>
 
                     <hr>
                     <div class="container">
