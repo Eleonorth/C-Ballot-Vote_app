@@ -15,12 +15,6 @@ session_start();
 
 <body>
 
-
-<form action="Services/createCampaign.php" method="post">
-    <input placeholder="Nom de la campagne"  type="text" name="name">
-    <button class="btn btn-primary" type="submit">Valider</button>
-</form>
-
     <nav class="navbar navbar-light bg-light">
         <a class="navbar-brand" href="index.html">
             <img src="src/logo.png" width="200" height="100" class="d-inline-block align-top" alt="">
