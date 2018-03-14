@@ -1,6 +1,16 @@
 <?php
 session_start();
 
+if(isset($_SESSION['error_message'])) {
+    $error = $_SESSION['error_message'];
+    unset($_SESSION['error_message']);
+}
+
+if(isset($_SESSION['success_message'])) {
+    $success = $_SESSION['success_message'];
+    unset($_SESSION['success_message']);
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -21,6 +31,19 @@ session_start();
     </a>
     <h1>C-Ballot</h1>
 </nav>
+
+    <?php if(isset($error)): ?>
+        <div class="alert alert-warning" role="alert" style="text-align: center;">
+            <?php echo $error ?>
+        </div>
+    <?php endif; ?>
+
+    <?php if(isset($success)): ?>
+        <div class="alert alert-success" role="alert">
+            <?php echo $success ?>
+        </div>
+    <?php endif; ?>
+
 
 <div class="container">
 
@@ -46,17 +69,17 @@ session_start();
             <h2>Se connecter</h2>
             <form class="form-group" action="Services/login.php"  method="post">
                 <label>Email :</label>
-                <input type="email" name="email" class="form-control">
+                 <input type="email" name="email" class="form-control" id="email-connect" onkeyup="connectInput()">
 
                 <label>Mot de passe :</label>
-                <input type="password" name="mdp" class="form-control">
+                <input type="password" name="mdp" class="form-control" id="mdp-connect" onkeyup="connectInput()">
                 <hr>
 
                 <div class="container">
                     <div class="row">
                         <div class="col"></div>
                         <div class="col">
-                            <button type="submit" class="btn btn-light">Connexion</button>
+                            <button type="submit" button="button-connect">Connexion</button>
                         </div>
                         <div class="col"></div>
                     </div>
@@ -68,27 +91,28 @@ session_start();
         <div id="register" class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
             <h2>S'inscrire</h2>
             <form class="form-group" action="Services/signup.php" method="post">
+                
                 <label>Nom :</label>
-                <input type="text" name="lastname" class="form-control">
+                <input type="text" name="lastname" class="form-control" id="lastname" onkeyup="registerInput()">
 
                 <label>Prénom :</label>
-                <input type="text" name="firstname" class="form-control">
+                <input type="text" name="firstname" class="form-control" id="firstname" onkeyup="registerInput()">
 
                 <label>Email :</label>
-                <input type="email" name="email" class="form-control">
+                <input type="email" name="email" class="form-control" id="email" onkeyup="connectInput()">
 
                 <label>Mot de passe :</label>
-                <input type="password" name="mdp" class="form-control">
+                <input type="password" name="mdp" class="form-control" id="password" onkeyup="registerMdp()">
 
                 <label>Confirmation mot de passe :</label>
-                <input type="password" name="confirmMdp" class="form-control">
+                <input type="password" name="confirmMdp" class="form-control" id="passwordconf" onkeyup="registerMdp()">
                 <hr>
 
                 <div class="container">
                     <div class="row">
                         <div class="col"></div>
                         <div class="col">
-                            <button type="submit" class="btn btn-light">S'inscrire</button>
+                            <button type="submit" id="button-register">S'inscrire</button>
                         </div>
                         <div class="col"></div>
                     </div>
@@ -108,6 +132,7 @@ session_start();
 
 </div>  <!-- Fin du container -->
 
+<script src="script/main.js"></script>
 </body>
 </html>
 

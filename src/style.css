@@ -36,6 +36,10 @@ input {
     width: 50%;
 }
 
+.row {
+    width: 100%;
+}
+
 #description {
     border: 4px solid;
     border-radius: 10px;
@@ -81,5 +85,9 @@ footer {
 #deletePro{
     margin-top: auto;
     margin-bottom: auto;
+}
+
+.yellow {
+    border-color: #FCFF00;
 }
 
