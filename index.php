@@ -49,7 +49,7 @@ session_start();
 
             <div id="login" class="col">
                 <h2>Se connecter</h2>
-                <form class="form-group" action="../Services/login.php"  method="post">
+                <form class="form-group" action="Services/login.php"  method="post">
                     <label>Email :</label>
                     <input type="email" name="email" class="form-control">
 
@@ -62,7 +62,7 @@ session_start();
 
             <div id="register" class="col">
                 <h2>S'inscrire</h2>
-                <form class="form-group" action="../Services/signup.php" method="post">
+                <form class="form-group" action="Services/signup.php" method="post">
                     <label>Nom :</label>
                     <input type="text" name="lastname" class="form-control">
 
