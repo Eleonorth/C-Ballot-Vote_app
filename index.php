@@ -50,7 +50,7 @@ session_start();
                     <label>Mot de passe :</label>
                     <input type="password" name="mdp" class="form-control">
                     <br>
-                    <button type="submit">Connexion</button>
+                    <button type="submit" class="btn btn-light">Connexion</button>
                 </form>
             </div>
 
@@ -72,7 +72,7 @@ session_start();
                     <label>Confirmation mot de passe :</label>
                     <input type="password" name="confirmMdp" class="form-control">
                     <br>
-                    <button type="submit">S'inscrire</button>
+                    <button type="submit" class="btn btn-light">S'inscrire</button>
                 </form>
             </div>
         </div>
