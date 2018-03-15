@@ -26,8 +26,9 @@ $pdo = connectDb();
 $sql = "SELECT name, numberoptions FROM campaign WHERE campaign.idcampaign=$id";
 $datas = $pdo->query($sql);
 
-$sql2 = "SELECT name FROM choice WHERE idcampaign=$id";
+$sql2 = "SELECT name, idoption FROM choice WHERE idcampaign=$id";
 $data = $pdo->query($sql2);
+
 
 ?>
 
@@ -53,7 +54,7 @@ $data = $pdo->query($sql2);
                 <?php
                     $results = $datas->fetch();
                 ?>
-<!--                <input type="hidden" name="id" value="--><?php //echo $_GET['id']?><!--">-->
+                <input type="hidden" name="id" value="<?php echo $_GET['id']?>">
                 <label for="campaignName">Nom de la campagne :</label>
                 <input type="text" id="campaignName" name="newname" value="<?php echo $results[0]?>" class="form-control">
 
@@ -63,11 +64,12 @@ $data = $pdo->query($sql2);
 
                 <label for="options">Options de vote : </label>
                 <?php
+
                 while ($result = $data->fetch()){
 
                 ?>
-
-                <input type="text" id="options" name="options" value="<?php echo $result['name']?>" class="form-control">
+                    <input type="hidden" name="idchoice[]" value="<?php echo $result[1]?>">
+                <input type="text" id="options" name="option[]" value="<?php echo $result['name']?>" class="form-control">
 
                 <?php }
                 ?>
