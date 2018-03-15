@@ -57,13 +57,19 @@ session_start();
                     <label for="endDate">Date de fin :</label>
                     <input type="date" id="endDate" name="enddate" class="form-control">
 
-                    <label for="optionsNb">Nombre d'options de vote :</label>
+                    <label for="optionsNb">Nombre de choix à faire :</label>
                     <input type="number" id="optionsNb" name="" class="form-control">
 
                     <label for="options">Options de vote : </label>
-                    <input type="text" id="options" name="" class="form-control">
-                    <span><img src="../src/plus.svg" width="19" height="19" alt="Ajouter une option"> Ajouter une option</span>
-
+                    <input type="text" id="options" name="option[]" class="form-control">
+                    </br>
+                    <span id="span0"></span>
+                    <a href="javascript:addField()">
+                        <span style="color: #FFFFFF">
+                            <img src="../src/plus.svg" width="19" height="19" alt="Ajouter une option">
+                            Ajouter une option
+                        </span>
+                    </a>
 
                     <label for="emails">Emails des votants :</label>
                     <textarea id="emails" name ="textarea" class="form-control"></textarea>
@@ -95,6 +101,23 @@ session_start();
 
     </div>
 
+    <script>
+
+        //Variable à incrémenter
+        var i = 0;
+        //Variable qui contient un saut de ligne pour éviter d'avoir un message undefined
+        var input = '<br>';
+
+        //Fonction qui permet d'ajouter des inputs dans le fomulaire
+        function addField() {
+
+            var recup_field = document.getElementById('span'+i);
+            i++;
+            input = '<input class=form-control name="option[]"></br><span id=\"span'+i+'\"></span>';
+            var create_field = recup_field.innerHTML = input;
+        }
+
+    </script>
 
 </body>
 

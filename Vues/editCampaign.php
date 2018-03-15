@@ -77,14 +77,18 @@ $data = $pdo->query($sql2);
                     <input type="number" id="optionsNb" name="newnumber" value="<?php echo $results[1]?>" class="form-control">
 
                     <label for="options">Options de vote : </label>
-
                     <?php while ($result = $data->fetch()){ ?>
-
                     <input type="text" id="options" name="options" value="<?php echo $result['name']?>" class="form-control">
-
                     <?php } ?>
 
-                    <span><img src="../src/plus.svg" width="19" height="19" alt="Ajouter une option"> Ajouter une option</span>
+                    </br>
+                    <span id="span0"></span>
+                    <a href="javascript:addField()">
+                        <span style="color: #FFFFFF">
+                            <img src="../src/plus.svg" width="19" height="19" alt="Ajouter une option">
+                            Ajouter une option
+                        </span>
+                    </a>
 
                     <label for="emails">Emails des votants :</label>
                     <textarea id="emails" name="" class="form-control"></textarea>
@@ -115,6 +119,23 @@ $data = $pdo->query($sql2);
         </footer>
     </div>
 
+<script>
+
+    //Variable à incrémenter
+    var i = 0;
+    //Variable qui contient un saut de ligne pour éviter d'avoir un message undefined
+    var input = '<br>';
+
+    //Fonction qui permet d'ajouter des inputs dans le fomulaire
+    function addField() {
+
+        var recup_field = document.getElementById('span'+i);
+        i++;
+        input = '<input class=form-control name="option[]"></br><span id=\"span'+i+'\"></span>';
+        var create_field = recup_field.innerHTML = input;
+    }
+
+</script>
 
 </body>
 
