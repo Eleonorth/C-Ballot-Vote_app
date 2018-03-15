@@ -28,7 +28,7 @@ $profile= $pdo->query($request);
 $sql = " SELECT name , idorganization FROM organization WHERE idperson = $id";
 $data = $pdo->query($sql);
 
-$sql2 = " SELECT organization.name, campaign.name, startdate, enddate FROM campaign
+$sql2 = " SELECT organization.name, campaign.name, startdate, enddate, campaign.idcampaign FROM campaign
                   INNER JOIN organization ON campaign.idorganization=organization.idorganization 
                   INNER JOIN person ON organization.idperson=person.idperson
                   WHERE person.idperson = $id
@@ -168,6 +168,7 @@ $datas = $pdo->query($sql2);
                             <td><?php echo $result[1]?></td>
                             <td><?php echo $result[2]?></td>
                             <td><?php echo $result[3]?></td>
+                            <td><a href="editCampaign.php?id=<?php echo $result[4]?>">Editer</a></td>
                         </tr>
                         <?php
                     } ?>
