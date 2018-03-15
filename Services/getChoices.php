@@ -3,9 +3,6 @@ include '../Utils/connexion.php';
 
 $pdo = connectDb();
 $stmt = $pdo->query('SELECT * FROM choice');
-while ($data = $stmt->fetch()){
-    $list[] = $data;
-};
 
 ?>
 
@@ -19,8 +16,17 @@ while ($data = $stmt->fetch()){
     <title>Document</title>
 </head>
 <body>
-<?php foreach ($list as $item):?>
-    <p><?php echo $list['idoption']; ?></p>
-<?php endforeach; ?>
+
+<?php
+while ($data = $stmt->fetch()) {
+    ?>
+    <form action="hasVoted.php" method="post">
+        <input type="radio" name="idoption" value="male"><?php echo $data['name']; ?><br>
+        <?php
+        };
+        ?>
+        <button type="submit" class="btn btn-light">Valider</button>
+    </form>
+
 </body>
 </html>

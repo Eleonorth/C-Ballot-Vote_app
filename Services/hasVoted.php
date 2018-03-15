@@ -1,5 +1,5 @@
 <?php
-
+include '../Utils/generics.php';
 function createVote(){
 
     $idoption = $_POST['idoption'];
@@ -10,13 +10,13 @@ function createVote(){
     create('vote', $fields, $data);
     //INSERT INTO 'vote' (idoption, voted) VALUES (1 "Poulet BBQ", date)
 }
+createVote();
 
 
 function editHasVoted(){
 
     $array[] = explode('?',$_SERVER["REQUEST_URI"]);
     $codeurl = $array[0][1];
-    var_dump($codeurl);
 
     $field = array('hasvoted');
     $data = 1;
