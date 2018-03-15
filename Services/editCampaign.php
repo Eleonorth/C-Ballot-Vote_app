@@ -28,6 +28,7 @@ function editChoices ()
         $field = array('name');
         $data = array($names[$i]);
         edit('choice',$field,$data,'idoption',$idchoice[$i]);
+        // ajouter insert pour les nouveaux choix
         }
 
 

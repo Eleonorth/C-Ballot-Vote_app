@@ -19,15 +19,13 @@ include '../Utils/connexion.php';
 <body>
 
 <?php
-$id = $_GET['id'];
+$id = $_SESSION['idperson'];
 $pdo = connectDb();
 
 
-$sql = "SELECT name, numberoptions FROM campaign WHERE campaign.idcampaign=$id";
+$sql = "SELECT firstname, lastname, email, password FROM person WHERE idperson=$id";
 $datas = $pdo->query($sql);
 
-$sql2 = "SELECT name, idoption FROM choice WHERE idcampaign=$id";
-$data = $pdo->query($sql2);
 
 
 ?>
@@ -46,44 +44,34 @@ $data = $pdo->query($sql2);
         <div class="col-0 col-sm-0 col-md-0 col-lg-3 col-xl-3"></div>
 
         <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
-            <h2>Modifier une campagne</h2>
+            <h2>Editer mon profil</h2>
             <br>
-            <form class="form-group" action="../Services/editCampaign.php" method="post">
-                <input type="hidden" name="id" value="<?php echo $_GET['id']?>">
-
+            <form class="form-group" action="../Services/editProfile.php" method="post">
+                <input type="hidden" name="id" value="<?php echo $_SESSION['idperson']?>">
                 <?php
-                    $results = $datas->fetch();
+                $results = $datas->fetch();
                 ?>
+                <label for="userName">Nom :</label>
+                <input type="text" id="userName" name="lastname" value="<?php echo $results[0]?>" class="form-control">
 
-                <label for="campaignName">Nom de la campagne :</label>
-                <input type="text" id="campaignName" name="newname" value="<?php echo $results[0]?>" class="form-control">
+                <label for="firstName">Prénom :</label>
+                <input type="text" id="firstName" name="firstname" value="<?php echo $results[1]?>" class="form-control">
 
-                <label for="optionsNb">Nombre de choix à faire :</label>
-                <input type="number" id="optionsNb" name="newnumber" value="<?php echo $results[1]?>" class="form-control">
+                <label for="mail">Adresse mail :</label>
+                <input type="text" id="mail" name="email" value="<?php echo $results[2]?>" class="form-control">
 
-
-                <label for="options">Options de vote : </label>
-                <?php
-
-                while ($result = $data->fetch()){
-
-                ?>
-                    <input type="hidden" name="idchoice[]" value="<?php echo $result[1]?>">
-                <input type="text" id="options" name="option[]" value="<?php echo $result['name']?>" class="form-control">
-
-                <?php }
-                ?>
-                <span><img src="../src/plus.svg" width="19" height="19" alt="Ajouter une option"> Ajouter une option</span>
-
-                <label for="emails">Ajouter des votants :</label>
-                <textarea id="emails" name="" class="form-control"></textarea>
+<!--                <label for="password">Mot de passe :</label>-->
+<!--                <input type="password" id="password" name="password" value="--><?php //echo $results[3]?><!--" class="form-control">-->
+<!---->
+<!--                <label for="confirmpassword">Confirmer le mot de passe :</label>-->
+<!--                <input type="password" id="confirmpassword" name="confirmpassword" value="--><?php //echo $results[3]?><!--" class="form-control">-->
 
                 <hr>
                 <div class="container">
                     <div class="row">
                         <div class="col"></div>
                         <div class="col">
-                            <button type="submit" class="btn btn-light">Modifier la campagne</button>
+                            <button type="submit" class="btn btn-light">Modifier le profil</button>
                         </div>
                         <div class="col"></div>
                     </div>

@@ -65,9 +65,13 @@ $datas = $pdo->query($sql2);
         </div>
         <div class="col-lg-2">
             <div style="padding: auto auto; margin: auto auto;">
+
+                <a href="editProfile.php">ICI</a>
                 <?php
                 $user = $profile->fetch();
                 ?>
+
+
                 <p> Nom : <?php echo $user['lastname'] ?></p>
                 <p> Prénom : <?php echo $user['firstname'] ?> </p>
                 <p> Adresse mail : <?php echo $user['email'] ?></p>
