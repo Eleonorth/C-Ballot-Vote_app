@@ -140,15 +140,13 @@ if(isset($_SESSION['success_message'])) {
 
         <div class="row"><br></div>
 
+    </div>  <!-- Fin du container -->
 
     <footer>
         C-Ballot &#169; 2018 - Hein Team
     </footer>
 
-    </div>  <!-- Fin du container -->
-
     <script src="Script/main.js"></script>
-
 
 </body>
 </html>
