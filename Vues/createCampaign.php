@@ -30,15 +30,16 @@ session_start();
             <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
                 <h2>Créer une campagne</h2>
                 <br>
-                <form class="form-group" action="#" method="post">
+                <form class="form-group" action="../Services/createCampaign.php" method="post">
+                    <input type="hidden" name="id" value="<?php echo $_GET['id']?>">
                     <label for="campaignName">Nom de la campagne :</label>
-                    <input type="text" id="campaignName" name="" class="form-control">
+                    <input type="text" id="campaignName" name="name" class="form-control">
 
                     <label for="startDate">Date de début :</label>
-                    <input type="date" id="startDate" name="" class="form-control">
+                    <input type="date" id="startDate" name="startdate" class="form-control">
 
                     <label for="endDate">Date de fin :</label>
-                    <input type="date" id="endDate" name="" class="form-control">
+                    <input type="date" id="endDate" name="enddate" class="form-control">
 
                     <label for="optionsNb">Nombre d'options de vote :</label>
                     <input type="number" id="optionsNb" name="" class="form-control">
@@ -49,7 +50,7 @@ session_start();
 
 
                     <label for="emails">Emails des votants :</label>
-                    <textarea id="emails" name ="" class="form-control"></textarea>
+                    <textarea id="emails" name ="textarea" class="form-control"></textarea>
 
                     <hr>
                     <div class="container">

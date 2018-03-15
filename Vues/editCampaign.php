@@ -1,5 +1,8 @@
 <?php
 session_start();
+
+include '../Utils/connexion.php';
+
 ?>
 
 <!doctype html>
@@ -14,6 +17,20 @@ session_start();
 </head>
 
 <body>
+
+<?php
+$id = $_GET['id'];
+$pdo = connectDb();
+
+
+$sql = "SELECT name, numberoptions FROM campaign WHERE campaign.idcampaign=$id";
+$datas = $pdo->query($sql);
+
+$sql2 = "SELECT name FROM choice WHERE idcampaign=$id";
+$data = $pdo->query($sql2);
+
+?>
+
 <nav class="navbar navbar-light bg-light">
     <a class="navbar-brand" href="../index.php">
         <img src="../src/logo.png" width="200" height="100" class="d-inline-block align-top" alt="">
@@ -30,15 +47,28 @@ session_start();
         <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
             <h2>Modifier une campagne</h2>
             <br>
-            <form class="form-group" action="#" method="post">
-                <label for="campaignName">Nom de la campagne :</label>
-                <input type="text" id="campaignName" name="" class="form-control">
+            <form class="form-group" action="../Services/editCampaign.php" method="post">
+                <input type="hidden" name="id" value="<?php echo $_GET['id']?>">
 
-                <label for="optionsNb">Nombre d'options de vote :</label>
-                <input type="number" id="optionsNb" name="" class="form-control">
+                <?php
+                $results = $datas->fetch();
+                ?>
+                <!--                <input type="hidden" name="id" value="--><?php //echo $_GET['id']?><!--">-->
+
+                <label for="campaignName">Nom de la campagne :</label>
+                <input type="text" id="campaignName" name="newname" value="<?php echo $results[0]?>" class="form-control">
+
+                <label for="optionsNb">Nombre de choix à faire :</label>
+                <input type="number" id="optionsNb" name="newnumber" value="<?php echo $results[1]?>" class="form-control">
 
                 <label for="options">Options de vote : </label>
-                <input type="text" id="options" name="" class="form-control">
+
+                <?php while ($result = $data->fetch()){ ?>
+
+                <input type="text" id="options" name="options" value="<?php echo $result['name']?>" class="form-control">
+
+                <?php } ?>
+
                 <span><img src="../src/plus.svg" width="19" height="19" alt="Ajouter une option"> Ajouter une option</span>
 
                 <label for="emails">Emails des votants :</label>

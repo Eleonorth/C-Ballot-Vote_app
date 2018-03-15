@@ -19,21 +19,7 @@ function createOrganization() {
 }
 
 
-// Edition d'une organisation
-function editOrganization(){
-    // soit un href avec l'id de l'organisation que je modifie avec un ?id avec un GET
 
-    $newName = $_POST['newName'];
-
-    $field= array('name');
-    $data = array($newName);
-    $wherefield = 'idorganization';
-    $id = 1;
-
-
-    edit('organization', $field,$data,$wherefield,$id);
-
-}
 
 
 // Suppression d'une organisation

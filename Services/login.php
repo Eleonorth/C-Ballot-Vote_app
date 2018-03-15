@@ -1,24 +1,14 @@
 <?php
 
+include 'person.php';
 session_start();
 
-include 'person.php';
-
-
-//Fonction qui permet de vérifier si les champs de connexion sont remplis
-function fieldConnection() {
-
-    $login = $_POST['email'];
-    $password = $_POST['mdp'];
-
-    if (!empty($login) || !empty($password)) {
-        connection($login, md5($password));
-    }
-
-}
 
 //Fonction qui permet de se connecter
-function connection($login, $password) {
+function connection() {
+
+    $login = $_POST['email'];
+    $password = md5($_POST['mdp']);
 
     $pdo = connectDb();
 
@@ -33,12 +23,15 @@ function connection($login, $password) {
 
     //Compare les éléments récupérés avec les éléments entrés : sont-ils les mêmes?
     if ($sqlmail_fetch['email'] == $login && $sqlpwd_fetch['password'] == $password) {
-        $_SESSION['idperson'] = $sqlmail_fetch['idperson'];
-        header('Location:../Vues/organization.php');
+          $_SESSION['idperson'] = $sqlmail_fetch['idperson'];
+        header('Location:../Vues/profile.php');
+
     } else {
-        echo "FUCK !!!!!";
+        
+        $_SESSION['error_message'] = "Email ou mot de passe incorrect";
+        header('Location:../index.php');
     }
 
 }
 
-fieldConnection();
+connection();
