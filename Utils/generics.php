@@ -21,6 +21,8 @@ function create($tablename,$fields,$data) {
 
     $pdo = connectDb();
     $pdo->exec($sql);
+    $newId = $pdo->lastInsertId();
+    return $newId;
 
 }
 

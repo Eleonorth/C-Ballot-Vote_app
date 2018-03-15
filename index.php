@@ -71,7 +71,7 @@ if(isset($_SESSION['success_message'])) {
                     <br>
                     Vous pouvez donc ouvrir une campagne, ajouter des choix de votes et une liste de votants, et le tour est joué !
                     <br>
-                    Et si vous changez d'avis, vous pouvez arrêter une campagne à tous moments.
+                    Et si vous changez d'avis, vous pouvez arrêter une campagne à tout moment.
                 </p>
             </div>
             <div class="col-0 col-sm-0 col-md-1 col-lg-1 col-xl-1"></div>
@@ -145,7 +145,7 @@ if(isset($_SESSION['success_message'])) {
 
     </div>  <!-- Fin du container -->
 
-    <script src="script/main.js"></script>
+    <script src="Script/main.js"></script>
 
 
 </body>
