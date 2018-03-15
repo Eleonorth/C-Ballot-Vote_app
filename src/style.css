@@ -99,3 +99,39 @@ footer {
     margin-top: auto;
     margin-bottom: auto;
 }
+
+
+/* CSS de Mathis */
+
+input[type=button], input[type=submit], input[type=reset], button, .button {
+    padding: 5px 15px;
+    margin: 3px 4px;
+    display: inline-block;
+    color: #ffffff;
+    font-size: 26px;
+    cursor: pointer;
+    background: #5d5d5d;
+    background: linear-gradient(top, #5d5d5d 0%, #444444 100%);
+    background: -moz-linear-gradient(top, #5d5d5d 0%, #444444 100%);
+    background: -webkit-linear-gradient(top, #5d5d5d 0%, #444444 100%);
+    background: -o-linear-gradient(top, #5d5d5d 0%, #444444 100%);
+    border: 1px solid #5d5d5d;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -o-border-radius: 5px;
+    box-shadow:0px 0px 2px 1px rgba(0, 0, 0, 0.25), inset 1px 1px 0px 0px rgba(255, 255, 255, 0.25);
+    -moz-box-shadow:0px 0px 2px 1px rgba(0, 0, 0, 0.25), inset 1px 1px 0px 0px rgba(255, 255, 255, 0.25);
+    -webkit-box-shadow:0px 0px 2px 1px rgba(0, 0, 0, 0.25), inset 1px 1px 0px 0px rgba(255, 255, 255, 0.25);
+    -o-box-shadow:0px 0px 2px 1px rgba(0, 0, 0, 0.25), inset 1px 1px 0px 0px rgba(255, 255, 255, 0.25);
+    text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.50);
+}
+input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover, button:hover, .button:hover {
+    background: linear-gradient(top, #777777 0%, #5d5d5d 100%);
+    background: -moz-linear-gradient(top, #777777 0%, #5d5d5d 100%);
+    background: -webkit-linear-gradient(top, #777777 0%, #5d5d5d 100%);
+    background: -o-linear-gradient(top, #777777 0%, #5d5d5d 100%);
+}
+input[type=button]:active, input[type=submit]:active, input[type=reset]:active, button:active, .button:active{
+    opacity:0.8;
+}

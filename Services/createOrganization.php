@@ -19,20 +19,4 @@ function createOrganization() {
 }
 
 
-
-
-
-// Suppression d'une organisation
-function deleteOrganization() {
-    // soit un href avec l'id de l'organisation que je modifie avec un ?id avec un GET
-    $field='idorganzation';
-    $id = 1;
-
-    delete('organization',$field,$id);
-
-}
-
-
-
-
 createOrganization();

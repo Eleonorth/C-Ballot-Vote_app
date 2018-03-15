@@ -2,7 +2,7 @@
 include '../Utils/generics.php';
 
 
-// Supprime une organisation
+// Supprime une organisation en récupérant son ID via un POST
 
 function deleteOrganization() {
 

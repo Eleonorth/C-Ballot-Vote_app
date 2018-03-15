@@ -15,7 +15,7 @@ function editCampaign() {
 
 
 }
-
+// Edite les choix d'une campagne
 function editChoices ()
 {
     $names = $_POST['option'];
@@ -44,6 +44,7 @@ function editChoices ()
 
 }
 
+// Ajoute des nouveaux votants
 function newVoters() {
 
     $id = $_POST['id'];

@@ -2,7 +2,7 @@
 include '../Utils/generics.php';
 
 
-// Supprime une campagne
+// Supprime une campagne en récupérer son id via un POST
 
 function deleteCampaign() {
 

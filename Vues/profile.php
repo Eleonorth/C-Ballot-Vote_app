@@ -72,6 +72,8 @@ $datas = $pdo->query($sql2);
 
     <div class="container">
 
+
+
         <!-- Ligne informations utilisateurs-->
         <div class="row">
 
@@ -146,7 +148,11 @@ $datas = $pdo->query($sql2);
                         <tr>
                             <td> <?php echo $results['name']?> </td>
                             <td><a href="editOrganization.php?id=<?php echo $results[1]?>">Editer</a></td>
-                            <td><a href="deleteOrganization.php?id=<?php echo $results[1]?>">Supprimer</a></td>
+                            <td><form action="../Services/deleteOrganization.php" method="post">
+                                    <input type="hidden" name="id" value="<?php echo $results[1]?>">
+                                    <input name="supprimer" type="submit" onclick="if(!confirm('Voulez-vous supprimer cette organisation?')) return false;" value="Supprimer" />
+                                </form>
+<!--                                <a href="deleteOrganization.php?id=--><?php //echo $results[1]?><!--">Supprimer</a></td>-->
                             <td> <a href="createCampaign.php?id=<?php echo $results[1]?>">Créer une campagne</a> </td>
                         </tr>
                         <?php
@@ -188,7 +194,11 @@ $datas = $pdo->query($sql2);
                                 <td><a href="#">Clôturer</a></td>
                                 <td><a href="editCampaign.php?id=<?php echo $result[4]?>">Editer</a></td>
                                 <td><a href="vote.php?id=<?php echo $result[4]?>">Voter</a></td>
-                                <td><a href="deleteCampaign.php?id=<?php echo $result[4]?>">Supprimer</a></td>
+                                <td><form action="../Services/deleteCampaign.php" method="post">
+                                    <input type="hidden" name="id" value="<?php echo $result[4]?>">
+                                    <input name="supprimer" type="submit" onclick="if(!confirm('Voulez-vous supprimer cette campagne?')) return false;" value="Supprimer" />
+                                </form></td>
+
                             </tr>
                         <?php } ?>
                         </tbody>
