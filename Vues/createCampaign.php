@@ -27,7 +27,7 @@ session_start();
                     <a class="nav-link" href="../index.php">Accueil</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Mon profil<span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="../Vues/profile.php">Mon profil<span class="sr-only">(current)</span></a>
                 </li>
             </ul>
             <button id="logout" class="btn btn-light" style="float: right">
@@ -58,7 +58,7 @@ session_start();
                     <input type="date" id="endDate" name="enddate" class="form-control">
 
                     <label for="optionsNb">Nombre de choix à faire :</label>
-                    <input type="number" id="optionsNb" name="" class="form-control">
+                    <input type="number" id="numberoptions" name="numberoptions" class="form-control">
 
                     <label for="options">Options de vote : </label>
                     <input type="text" id="options" name="option[]" class="form-control">

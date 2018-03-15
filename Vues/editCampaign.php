@@ -26,11 +26,11 @@ $pdo = connectDb();
 $sql = "SELECT name, numberoptions FROM campaign WHERE campaign.idcampaign=$id";
 $datas = $pdo->query($sql);
 
-$sql2 = "SELECT name FROM choice WHERE idcampaign=$id";
+$sql2 = "SELECT name, idoption FROM choice WHERE idcampaign=$id";
 $data = $pdo->query($sql2);
 
-?>
 
+?>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="../index.php"><h1>C-Ballot</h1></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -43,7 +43,7 @@ $data = $pdo->query($sql2);
                     <a class="nav-link" href="../index.php">Accueil</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Mon profil<span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="profile.php">Mon profil<span class="sr-only">(current)</span></a>
                 </li>
             </ul>
             <button id="logout" class="btn btn-light" style="float: right">
@@ -68,7 +68,6 @@ $data = $pdo->query($sql2);
                     <?php
                     $results = $datas->fetch();
                     ?>
-                    <!--                <input type="hidden" name="id" value="--><?php //echo $_GET['id']?><!--">-->
 
                     <label for="campaignName">Nom de la campagne :</label>
                     <input type="text" id="campaignName" name="newname" value="<?php echo $results[0]?>" class="form-control">
@@ -78,7 +77,9 @@ $data = $pdo->query($sql2);
 
                     <label for="options">Options de vote : </label>
                     <?php while ($result = $data->fetch()){ ?>
-                    <input type="text" id="options" name="options" value="<?php echo $result['name']?>" class="form-control">
+
+                        <input type="hidden" name="idchoice[]" value="<?php echo $result[1]?>">
+                    <input type="text" id="options" name="option[]" value="<?php echo $result['name']?>" class="form-control">
                     <?php } ?>
 
                     </br>
@@ -90,7 +91,7 @@ $data = $pdo->query($sql2);
                         </span>
                     </a>
 
-                    <label for="emails">Emails des votants :</label>
+                    <label for="emails">Ajouter des votants :</label>
                     <textarea id="emails" name="" class="form-control"></textarea>
 
                     <hr>

@@ -28,7 +28,7 @@ $profile = $pdo->query($request);
 $sql = " SELECT name , idorganization FROM organization WHERE idperson = $id";
 $data = $pdo->query($sql);
 
-$sql2 = " SELECT organization.name, campaign.name, startdate, enddate FROM campaign
+$sql2 = " SELECT organization.name, campaign.name, startdate, enddate, campaign.idcampaign FROM campaign
                   INNER JOIN organization ON campaign.idorganization=organization.idorganization 
                   INNER JOIN person ON organization.idperson=person.idperson
                   WHERE person.idperson = $id
@@ -56,7 +56,7 @@ $datas = $pdo->query($sql2);
                         Gérer mes informations
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Modifier mon profil</a>
+                        <a class="dropdown-item" href="editProfile.php">Modifier mon profil</a>
                         <a class="dropdown-item" href="#" style="color: #F3193A">Supprimer mon compte</a>
                     </div>
                 </li>
@@ -143,7 +143,7 @@ $datas = $pdo->query($sql2);
                     <?php while ($results = $data->fetch()){ ?>
                         <tr>
                             <td> <?php echo $results['name']?> </td>
-                            <td> <a href="#">Editer</a> </td>
+                            <td><a href="editOrganization.php?id=<?php echo $results[1]?>">Editer</a></td>
                             <td> <a href="#">Supprimer</a> </td>
                             <td> <a href="createCampaign.php?id=<?php echo $results[1]?>">Créer une campagne</a> </td>
                         </tr>
@@ -184,7 +184,7 @@ $datas = $pdo->query($sql2);
                                 <td><?php echo $result[2]?></td>
                                 <td><?php echo $result[3]?></td>
                                 <td><a href="#">Clôturer</a></td>
-                                <td><a href="">Editer</a></td>
+                                <td><a href="editCampaign.php?id=<?php echo $result[4]?>">Editer</a></td>
                                 <td><a href="#">Supprimer</a></td>
                             </tr>
                         <?php } ?>
