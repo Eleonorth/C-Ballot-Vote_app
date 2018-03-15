@@ -10,7 +10,7 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link href="/src/style.css" rel="stylesheet" >
+    <link href="../src/style.css" rel="stylesheet" >
     <link href="https://fonts.googleapis.com/css?family=Finger+Paint|PT+Sans+Narrow" rel="stylesheet">
     <title>C-Ballot-Profile</title>
 </head>
@@ -22,7 +22,7 @@ $id = $_SESSION['idperson'];
 $pdo = connectDb();
 
 $request = "SELECT firstname, lastname, email FROM person WHERE idperson = $id";
-$profile= $pdo->query($request);
+$profile = $pdo->query($request);
 
 
 $sql = " SELECT name , idorganization FROM organization WHERE idperson = $id";
@@ -52,7 +52,7 @@ $datas = $pdo->query($sql2);
             <div class="col-lg-12">
                 <p>
                     <a data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-                        <img src="/src/user.png" width="256" height="256">
+                        <img src="../src/user.png" width="256" height="256">
                     </a>
                 </p>
                 <div class="collapse" id="collapseExample">

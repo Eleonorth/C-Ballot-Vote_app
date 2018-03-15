@@ -15,6 +15,7 @@ function createOrganization() {
     $data = array($userId,$name);
 
     create('organization', $fields, $data);
+    header('Location:../Vues/profile.php');
 }
 
 

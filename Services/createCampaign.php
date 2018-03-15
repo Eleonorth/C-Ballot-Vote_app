@@ -2,50 +2,36 @@
 include '../Utils/generics.php';
 
 
-// pour récupérer toutes les organisations d'une personne et les mettre dans un menu déroulant
-// SELECT name FROM organization WHERE idperson = $_SESSION['id']
-
-
 // Crée une campagne de vote liée à une organisation (et donc à un compte utilisateur)
-// Définit les choix
-// Envoie les invitations
-
 
 function createCampaign() {
 
+    $idorganization = $_POST['id'];
+    $startdate= $_POST['startdate'];
+    $enddate= $_POST['enddate'];
+    $numberoptions= $_POST['numberoptions'];
+
+
     $name = $_POST['name'];
+    $fields =array('idorganization','name','startdate','enddate','numberoptions');
+    $data=array($idorganization,$name,$startdate,$enddate,$numberoptions);
 
-    $data=array(2,$name,'2018-03-07','2018-03-07',4);
+    $newid= create('campaign',$fields,$data);
 
-    for ($i=0;$i<count($data);$i++) {
+    return $newid;
 
-        $data[$i] = "'" . $data[$i] . "'";
-    }
-    $data_values=implode(',',$data);
-
-    $sql= "INSERT INTO `campaign` (idorganization, name, startdate, enddate, numberoptions) VALUES'.'('.$data_values.')";
-
-    $pdo = connectDb();
-    $pdo->exec($sql);
-    $newId = $pdo->lastInsertId();
-    echo $newId;
 }
 
+// Définit les choix
 
+// Crée la campagne et envoie les invitations
+function sentInvites() {
 
+    $idcampaign = createCampaign();
+    $fields = array('idcampaign', 'email', 'code', 'emailsent','hasvoted');
+    $data = array($idcampaign,'zut',md5(uniqid()),'1','0');
+    create('invitation', $fields, $data);
 
-//
-//// générer le code unique pour les invitations : md5(uniqid());
-//
-//
-//function sentInvites() {
-//
-//    $fields = array('idcampaign', 'email', 'code', 'emailsent','hasvoted');
-//    $data = array();
-//    create('invitation', $fields, $data);
-//
-//
-//}
+}
 
-createCampaign();
-
+sentInvites();
