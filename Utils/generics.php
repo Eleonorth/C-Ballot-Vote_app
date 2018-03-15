@@ -46,43 +46,33 @@ function edit($tablename,$field,$data,$wherefield, $id) {
         $sql .= $field[$i].' = '."'".$data[$i]."',";
 
     }
-        $sql .= $field[$i].' = '."'".$data[$i]."'";
+    $sql .= $field[$i].' = '."'".$data[$i]."'";
 
     $sql .= ' WHERE '.$wherefield.' = '.$id;
 
-    var_dump($sql);
-    
+
     $pdo= connectDb();
     $pdo->exec($sql);
 
 }
 
-// Fonction qui récupère le nombre d'entrées dans une table
-function getNumberofEntry($id,$tablename) {
+// Fonction qui modifie les contraintes de tables pour faciliter la suppression
+function onDeleteCascade(){
 
-    $sql = 'SELECT COUNT('.$id.') AS number FROM '.$tablename;
-    $pdo= connectDb();
-    $reponse = $pdo->query($sql);
-    $donnees = $reponse->fetch();
-    $number = (int) $donnees['number'];
-    return $number;
+    $tablename = ["organization","campaign","invitation","choice","vote"];
+    $foreignkey =["organization_ibfk_1","campaign_ibfk_1","invitation_ibfk_1","choice_ibfk_1","vote_ibfk_1"];
+    $field = ["idperson","idorganization","idcampaign","idcampaign","idoption"];
+    $primaryTablename = ["person","organization","campaign","campaign","choice"];
+
+    for ($i=0; $i<count($tablename); $i++) {
+        $sql = 'ALTER TABLE ' .$tablename[$i].' DROP FOREIGN KEY ' .$foreignkey[$i]. '; ALTER TABLE ' .$tablename[$i]. ' ADD CONSTRAINT ' .$foreignkey[$i]. ' FOREIGN KEY (' .$field[$i]. ') REFERENCES ' .$primaryTablename[$i]. '('.$field[$i].') ON DELETE CASCADE ON UPDATE CASCADE;';
+        $pdo = connectDb();
+        $pdo->exec($sql);
+        $pdo = null;
+
+
+    }
 
 }
-
-
-
-// Fonction qui permet de rechercher un champ via un ID
-//function searchById($data,$tablename,$id, $field) {
-//
-//    $data_values=implode(", ",$data);
-//
-//    $sql = 'SELECT '.$data_values.' FROM '.$tablename.' WHERE '.$field.' = '.$id;
-//
-//    var_dump($sql);
-//}
-
-
-
-
 
 

@@ -42,4 +42,5 @@ function CreateTable() {
 
 CreateBDD();
 CreateTable();
+onDeleteCascade();
 

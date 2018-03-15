@@ -13,7 +13,6 @@ function editCampaign() {
     $id = $_POST['id'];
     edit('campaign',$field,$data,'campaign.idcampaign', $id);
 
-    header('Location:../Vues/profile.php');
 
 }
 
@@ -28,13 +27,41 @@ function editChoices ()
         $field = array('name');
         $data = array($names[$i]);
         edit('choice',$field,$data,'idoption',$idchoice[$i]);
-        // ajouter insert pour les nouveaux choix
+        }
+
+    $newoptions = $_POST['newOption'];
+    $lengthtab = count($newoptions);
+
+    for($i=0;$i<$lengthtab;$i++) {
+
+        $id = $_POST['id'];
+        $field= array('name','idcampaign');
+        $data = array($newoptions[$i],$id);
+        create('choice',$field,$data);
     }
 
 
-    header('Location:../Vues/profile.php');
+
 }
 
+function newVoters() {
+
+    $id = $_POST['id'];
+    $emails = $_POST['emails'];
+    $email = explode(',',$emails);
+    $length= count($email);
+
+    for($i=0;$i<$length;$i++) {
+
+        $fields = array('idcampaign', 'email', 'code','hasvoted');
+        $data = array($id,$email[$i],md5(uniqid()),'0');
+        create('invitation', $fields, $data);
+    }
+    header('Location:../Vues/profile.php');
+
+
+}
 
 editCampaign();
 editChoices();
+newVoters();
