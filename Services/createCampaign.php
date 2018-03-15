@@ -16,9 +16,9 @@ function createCampaign() {
     $fields =array('idorganization','name','startdate','enddate','numberoptions');
     $data=array($idorganization,$name,$startdate,$enddate,$numberoptions);
 
-   $newid= create('campaign',$fields,$data);
+    $newid= create('campaign',$fields,$data);
 
-   return $newid;
+    return $newid;
 
 }
 
@@ -28,6 +28,7 @@ function createCampaign() {
 function sentInvites() {
 
     $idcampaign = createCampaign();
+    // boucler pour créer autant de champs que de mails renseignés dans le textarea (ATTENTION REGEX)
     $fields = array('idcampaign', 'email', 'code', 'emailsent','hasvoted');
     $data = array($idcampaign,'zut',md5(uniqid()),'1','0');
     create('invitation', $fields, $data);

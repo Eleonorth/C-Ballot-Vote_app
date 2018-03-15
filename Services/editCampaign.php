@@ -17,19 +17,24 @@ function editCampaign() {
 
 }
 
-function editChoices (){
+function editChoices ()
+{
+    $names = $_POST['option'];
+    $idchoice = $_POST['idchoice'];
+    $length = count($idchoice);
 
-    $id = $_POST['id'];
-    $name = $_POST['options'];
-    $field = array('name');
-    $data = array($name);
+    for($i=0;$i<$length;$i++) {
 
-    edit('choice',$field,$data,'idcampaign', $id);
+        $field = array('name');
+        $data = array($names[$i]);
+        edit('choice',$field,$data,'idoption',$idchoice[$i]);
+        // ajouter insert pour les nouveaux choix
+    }
+
 
     header('Location:../Vues/profile.php');
-
-
 }
+
 
 editCampaign();
 editChoices();
