@@ -35,6 +35,10 @@ input {
     width: 50%;
 }
 
+table {
+    width: 100%;
+}
+
 #description {
     border: 4px solid;
     border-radius: 10px;
@@ -57,18 +61,26 @@ footer {
     left: 0;
 }
 
+.gestion {
+    color: #F3193A;
+}
+
 #IDinfo{
-     margin-top: 2%;
+    margin-top: 2%;
+    display: inline-flex;
+
  }
+
 #IDorga{
     margin-top: 2%;
 }
+
 #IDcampaign{
     margin-top: 2%;
 }
 
 .resTab{
-    background-color: #4bd6d4;
+    background-color: #f3f1f3;
     border-radius: 5px;
 }
 
@@ -77,6 +89,7 @@ footer {
     margin-top: auto;
     margin-bottom: auto;
 }
+
 #deletePro{
     margin-top: auto;
     margin-bottom: auto;
