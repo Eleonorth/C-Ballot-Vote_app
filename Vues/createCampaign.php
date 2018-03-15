@@ -57,7 +57,7 @@ session_start();
                     <input type="date" min="<?php $date = date("Y-m-d"); echo $date;?>" id="startDate" name="startdate" class="form-control">
 
                     <label for="startDate">Date de fin :</label>
-                    <input type="date" min="<?php $date = date("Y-m-d"); echo $date;?>" id="startDate" name="startdate" class="form-control">
+                    <input type="date" min="<?php $date = date("Y-m-d"); echo $date;?>" id="startDate" name="enddate" class="form-control">
 
                     <label for="optionsNb">Nombre de choix à faire :</label>
                     <input type="number" id="numberoptions" name="numberoptions" class="form-control">
