@@ -30,10 +30,12 @@ session_start();
                     <a class="nav-link" href="../Vues/profile.php">Mon profil<span class="sr-only">(current)</span></a>
                 </li>
             </ul>
-            <button id="logout" class="btn btn-light" style="float: right">
-                <img src="../src/logout.svg" width="20" height="20">
-                <span class="gestion">Se déconnecter</span>
-            </button>
+            <form action="../Services/logout.php">
+                <button type="submit" id="logout" class="btn btn-light" style="float: right">
+                    <img src="../src/logout.svg" width="20" height="20">
+                    <span class="gestion">Se déconnecter</span>
+                </button>
+            </form>
         </div>
     </nav>
 

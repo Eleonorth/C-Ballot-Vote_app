@@ -1,5 +1,7 @@
 <?php
 session_start();
+
+include '../Utils/connexion.php';
 ?>
 
 <!doctype html>
@@ -14,6 +16,17 @@ session_start();
 </head>
 
 <body>
+
+<?php
+
+$id = $_GET['id'];
+$pdo = connectDb();
+
+
+$sql = "SELECT name FROM organization WHERE idorganization=$id";
+$data = $pdo->query($sql);
+
+?>
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="../index.php"><h1>C-Ballot</h1></a>
@@ -30,10 +43,12 @@ session_start();
                     <a class="nav-link" href="#">Mon profil<span class="sr-only">(current)</span></a>
                 </li>
             </ul>
-            <button id="logout" class="btn btn-light" style="float: right">
-                <img src="../src/logout.svg" width="20" height="20">
-                <span class="gestion">Se déconnecter</span>
-            </button>
+            <form action="../Services/logout.php">
+                <button type="submit" id="logout" class="btn btn-light" style="float: right">
+                    <img src="../src/logout.svg" width="20" height="20">
+                    <span class="gestion">Se déconnecter</span>
+                </button>
+            </form>
         </div>
     </nav>
 
@@ -48,8 +63,11 @@ session_start();
                 <br>
                 <form class="form-group" action="../Services/editOrganization.php" method="post">
                     <input type="hidden" name="id" value="<?php echo $_GET['id']?>">
+                    <?php
+                    $results = $data->fetch();
+                    ?>
                     <label for="organizationName">Nom de l'organisation :</label>
-                    <input type="text" id="organizationName" name="newname" class="form-control">
+                    <input type="text" id="organizationName" name="newname" value="<?php echo $results['name']?>" class="form-control">
 
                     <hr>
                     <div class="container">
