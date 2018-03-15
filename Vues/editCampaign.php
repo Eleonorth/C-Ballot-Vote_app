@@ -135,7 +135,7 @@ $data = $pdo->query($sql2);
 
         var recup_field = document.getElementById('span'+i);
         i++;
-        input = '<input class=form-control name="option[]"></br><span id=\"span'+i+'\"></span>';
+        input = '<input class=form-control name="newOption[]"></br><span id=\"span'+i+'\"></span>';
         var create_field = recup_field.innerHTML = input;
     }
 
