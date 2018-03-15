@@ -30,12 +30,28 @@ $datas = $pdo->query($sql);
 
 ?>
 
-<nav class="navbar navbar-light bg-light">
-    <a class="navbar-brand" href="../index.php">
-        <img src="../src/logo.png" width="200" height="100" class="d-inline-block align-top" alt="">
-    </a>
-    <h1>C-Ballot</h1>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="../index.php"><h1>C-Ballot</h1></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="../index.php">Accueil</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Mon profil<span class="sr-only">(current)</span></a>
+            </li>
+        </ul>
+        <button id="logout" class="btn btn-light" style="float: right">
+            <img src="../src/logout.svg" width="20" height="20">
+            <span class="gestion">Se déconnecter</span>
+        </button>
+    </div>
 </nav>
+
 
 <div class="container">
 
@@ -60,11 +76,11 @@ $datas = $pdo->query($sql);
                 <label for="mail">Adresse mail :</label>
                 <input type="text" id="mail" name="email" value="<?php echo $results[2]?>" class="form-control">
 
-<!--                <label for="password">Mot de passe :</label>-->
-<!--                <input type="password" id="password" name="password" value="--><?php //echo $results[3]?><!--" class="form-control">-->
-<!---->
-<!--                <label for="confirmpassword">Confirmer le mot de passe :</label>-->
-<!--                <input type="password" id="confirmpassword" name="confirmpassword" value="--><?php //echo $results[3]?><!--" class="form-control">-->
+                <!--                <label for="password">Mot de passe :</label>-->
+                <!--                <input type="password" id="password" name="password" value="--><?php //echo $results[3]?><!--" class="form-control">-->
+                <!---->
+                <!--                <label for="confirmpassword">Confirmer le mot de passe :</label>-->
+                <!--                <input type="password" id="confirmpassword" name="confirmpassword" value="--><?php //echo $results[3]?><!--" class="form-control">-->
 
                 <hr>
                 <div class="container">

@@ -1,10 +1,9 @@
-
 nav h1 {
     font-family: 'Finger Paint', cursive;
     text-align: center;
     font-size:50pt;
+    color: #CCF359;
     margin: 0%;
-    padding-right: 40%;
 }
 
 nav {
@@ -18,7 +17,7 @@ html {
 
 body {
     min-height: 100%;
-    background-color: #CCF359;
+    background-color: #9a9c95;
     position: relative;
 }
 
@@ -36,7 +35,7 @@ input {
     width: 50%;
 }
 
-.row {
+table {
     width: 100%;
 }
 
@@ -62,18 +61,31 @@ footer {
     left: 0;
 }
 
+#logout {
+    color: #F3193A;
+}
+
+#gestion {
+    color: #F3193A;
+    /*float: right;*/
+}
+
 #IDinfo{
     margin-top: 2%;
-}
+    display: inline-flex;
+
+ }
+
 #IDorga{
     margin-top: 2%;
 }
+
 #IDcampaign{
     margin-top: 2%;
 }
 
 .resTab{
-    background-color: #4bd6d4;
+    background-color: #f3f1f3;
     border-radius: 5px;
 }
 
@@ -82,12 +94,8 @@ footer {
     margin-top: auto;
     margin-bottom: auto;
 }
+
 #deletePro{
     margin-top: auto;
     margin-bottom: auto;
 }
-
-.yellow {
-    border-color: #FCFF00;
-}
-
