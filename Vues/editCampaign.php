@@ -95,7 +95,7 @@ $data = $pdo->query($sql2);
                     </a>
 
                     <label for="emails">Ajouter des votants :</label>
-                    <textarea id="emails" name="" class="form-control"></textarea>
+                    <textarea id="emails" name="emails" class="form-control"></textarea>
 
                     <hr>
                     <div class="container">

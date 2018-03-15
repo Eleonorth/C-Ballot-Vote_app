@@ -34,7 +34,6 @@ CREATE TABLE IF NOT EXISTS `invitation` (
   idcampaign INT,
   email VARCHAR (255) NOT NULL,
   code VARCHAR (100) NOT NULL,
-  emailsent TINYINT (1) NOT NULL,
   hasvoted TINYINT (1) NOT NULL,
   PRIMARY KEY (idinvitation),
   FOREIGN KEY (idcampaign) REFERENCES campaign(idcampaign)

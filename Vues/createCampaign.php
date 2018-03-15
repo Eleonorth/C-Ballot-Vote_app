@@ -74,7 +74,7 @@ session_start();
                     </a>
 
                     <label for="emails">Emails des votants :</label>
-                    <textarea id="emails" name ="textarea" class="form-control"></textarea>
+                    <textarea id="emails" name ="emails" class="form-control"></textarea>
 
                     <hr>
                     <div class="container">

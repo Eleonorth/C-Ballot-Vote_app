@@ -40,10 +40,17 @@ function sentInvites() {
 
     $idcampaign = createCampaign();
     setChoices($idcampaign);
-    // boucler pour créer autant de champs que de mails renseignés dans le textarea (ATTENTION REGEX)
-    $fields = array('idcampaign', 'email', 'code', 'emailsent','hasvoted');
-    $data = array($idcampaign,'zut',md5(uniqid()),'1','0');
+
+    $emails = $_POST['emails'];
+    $email = explode(',',$emails);
+    $length= count($email);
+
+    for($i=0;$i<$length;$i++) {
+
+    $fields = array('idcampaign', 'email', 'code','hasvoted');
+    $data = array($idcampaign,$email[$i],md5(uniqid()),'0');
     create('invitation', $fields, $data);
+    }
     header('Location:../Vues/profile.php');
 
 

@@ -1,6 +1,7 @@
 <?php
 
-include 'connexion.php';
+
+include 'generics.php';
 
 function CreateBDD() {
     $host = '127.0.0.1';
@@ -40,6 +41,9 @@ function CreateTable() {
 
 }
 
+
 CreateBDD();
 CreateTable();
+onDeleteCascade();
+
 
