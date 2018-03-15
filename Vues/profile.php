@@ -37,12 +37,35 @@ $datas = $pdo->query($sql2);
 
 
 ?>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="../index.php"><h1>C-Ballot</h1></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-    <nav class="navbar navbar-light bg-light">
-        <a class="navbar-brand" href="../index.php">
-            <img src="../src/logo.png" width="200" height="100" class="d-inline-block align-top" alt="">
-        </a>
-        <h1>C-Ballot</h1>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="../index.php">Accueil</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Mon profil<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Gérer mes informations
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Modifier mon profil</a>
+                        <a class="dropdown-item" href="#" style="color: #F3193A">Supprimer mon compte</a>
+                    </div>
+                </li>
+            </ul>
+            <button id="logout" class="btn btn-light" style="float: right">
+                <img src="../src/logout.svg" width="20" height="20">
+                <span class="gestion">Se déconnecter</span>
+            </button>
+        </div>
     </nav>
 
     <div class="container">
@@ -62,28 +85,6 @@ $datas = $pdo->query($sql2);
                     <p> Prénom : <?php echo $user['firstname'] ?> </p>
                     <p> Adresse mail : <?php echo $user['email'] ?> </p>
                 </div>
-
-                <div class="col">
-                    <p>
-                        <a class="gestion" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-                            Gérer mes informations
-                        </a>
-                    </p>
-                    <div class="collapse" id="collapseExample">
-                        <div class="card card-body">
-                            <button type="button" class="btn btn-primary">Modifier mon profil</button>
-                            <button type="button" class="btn btn-danger">SUPPRIMER</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col">
-                    <button class="btn btn-light" style="float: right">
-                        <img src="../src/logout.svg" width="20" height="20">
-                        <span class="gestion">Se déconnecter</span>
-                    </button>
-                </div>
-
             </div>
         </div>
         <!-- Fin ligne informations utilisateurs-->

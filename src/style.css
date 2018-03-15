@@ -2,8 +2,8 @@ nav h1 {
     font-family: 'Finger Paint', cursive;
     text-align: center;
     font-size:50pt;
+    color: #CCF359;
     margin: 0%;
-    padding-right: 40%;
 }
 
 nav {
@@ -61,8 +61,13 @@ footer {
     left: 0;
 }
 
-.gestion {
+#logout {
     color: #F3193A;
+}
+
+#gestion {
+    color: #F3193A;
+    /*float: right;*/
 }
 
 #IDinfo{
