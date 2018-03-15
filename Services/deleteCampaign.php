@@ -2,15 +2,15 @@
 include '../Utils/generics.php';
 
 
-// Supprime une organisation
+// Supprime une campagne
 
-function deleteOrganization() {
+function deleteCampaign() {
 
     $id = $_POST['id'];
-    delete('organization','idorganization',$id);
+    delete('campaign','idcampaign',$id);
     header('Location:../Vues/profile.php');
 
 
 }
 
-deleteOrganization();
+deleteCampaign();

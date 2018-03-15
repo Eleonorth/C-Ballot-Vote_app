@@ -57,7 +57,7 @@ $datas = $pdo->query($sql2);
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="editProfile.php">Modifier mon profil</a>
-                        <a class="dropdown-item" href="#" style="color: #F3193A">Supprimer mon compte</a>
+                        <a class="dropdown-item" href="deleteUser.php" style="color: #F3193A">Supprimer mon compte</a>
                     </div>
                 </li>
             </ul>
@@ -188,7 +188,7 @@ $datas = $pdo->query($sql2);
                                 <td><a href="#">Clôturer</a></td>
                                 <td><a href="editCampaign.php?id=<?php echo $result[4]?>">Editer</a></td>
                                 <td><a href="vote.php?id=<?php echo $result[4]?>">Voter</a></td>
-                                <td><a href="#">Supprimer</a></td>
+                                <td><a href="deleteCampaign.php?id=<?php echo $result[4]?>">Supprimer</a></td>
                             </tr>
                         <?php } ?>
                         </tbody>
