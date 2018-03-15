@@ -18,6 +18,8 @@ function verifMail() {
     if ($sql_fetch['email'] != $email) {
         
         checkField($email);
+        header('Location:../index.php');
+
     } else {
 
         $_SESSION['error_message'] = "Email déjà existant veuillez choisir une autre adresse";

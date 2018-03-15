@@ -50,7 +50,6 @@ function edit($tablename,$field,$data,$wherefield, $id) {
 
     $sql .= ' WHERE '.$wherefield.' = '.$id;
 
-    var_dump($sql);
     
     $pdo= connectDb();
     $pdo->exec($sql);

@@ -32,15 +32,15 @@ session_start();
             <br>
             <form class="form-group" action="../Services/editOrganization.php" method="post">
                 <input type="hidden" name="id" value="<?php echo $_GET['id']?>">
-                <label for="campaignName">Nom de l'organisation :</label>
-                <input type="text" id="campaignName" name="newname" class="form-control">
+                <label for="organizationName">Nom de l'organisation :</label>
+                <input type="text" id="organizationName" name="newname" class="form-control">
 
                 <hr>
                 <div class="container">
                     <div class="row">
                         <div class="col"></div>
                         <div class="col">
-                            <button type="submit" class="btn btn-light">Modifier la campagne</button>
+                            <button type="submit" class="btn btn-light">Modifier l'organisation</button>
                         </div>
                         <div class="col"></div>
                     </div>

@@ -31,6 +31,8 @@ function sentInvites() {
     $fields = array('idcampaign', 'email', 'code', 'emailsent','hasvoted');
     $data = array($idcampaign,'zut',md5(uniqid()),'1','0');
     create('invitation', $fields, $data);
+    header('Location:../Vues/profile.php');
+
 
 }
 

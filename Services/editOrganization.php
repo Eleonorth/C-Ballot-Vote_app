@@ -11,7 +11,9 @@ function editOrganization() {
     $data = array($name);
     $id = $_POST['id'];
     edit('organization',$field,$data,'organization.idorganization', $id);
+
     header('Location:../Vues/profile.php');
 
 }
 
+editOrganization();
