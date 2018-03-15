@@ -61,10 +61,12 @@ $datas = $pdo->query($sql2);
                     </div>
                 </li>
             </ul>
-            <button id="logout" class="btn btn-light" style="float: right">
-                <img src="../src/logout.svg" width="20" height="20">
-                <span class="gestion">Se déconnecter</span>
-            </button>
+            <form action="../Services/logout.php">
+                <button id="logout" class="btn btn-light" style="float: right">
+                    <img src="../src/logout.svg" width="20" height="20">
+                    <span class="gestion">Se déconnecter</span>
+                </button>
+            </form>
         </div>
     </nav>
 

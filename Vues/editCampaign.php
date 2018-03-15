@@ -43,13 +43,15 @@ $data = $pdo->query($sql2);
                     <a class="nav-link" href="../index.php">Accueil</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="profile.php">Mon profil<span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="profile.php">Mon profil</a>
                 </li>
             </ul>
-            <button id="logout" class="btn btn-light" style="float: right">
-                <img src="../src/logout.svg" width="20" height="20">
-                <span class="gestion">Se déconnecter</span>
-            </button>
+            <form action="../Services/logout.php">
+                <button id="logout" class="btn btn-light" style="float: right">
+                    <img src="../src/logout.svg" width="20" height="20">
+                    <span class="gestion">Se déconnecter</span>
+                </button>
+            </form>
         </div>
     </nav>
 
@@ -80,6 +82,7 @@ $data = $pdo->query($sql2);
 
                         <input type="hidden" name="idchoice[]" value="<?php echo $result[1]?>">
                     <input type="text" id="options" name="option[]" value="<?php echo $result['name']?>" class="form-control">
+                        <br>
                     <?php } ?>
 
                     </br>
