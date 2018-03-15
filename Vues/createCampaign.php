@@ -54,10 +54,10 @@ session_start();
                     <input type="text" id="campaignName" name="name" class="form-control">
 
                     <label for="startDate">Date de début :</label>
-                    <input type="date" id="startDate" name="startdate" class="form-control">
+                    <input type="date" min="<?php $date = date("Y-m-d"); echo $date;?>" id="startDate" name="startdate" class="form-control">
 
                     <label for="endDate">Date de fin :</label>
-                    <input type="date" id="endDate" name="enddate" class="form-control">
+                    <input type="date" min="<?php $date = date("Y-m-d"); echo $date;?>" id="endDate" name="enddate" class="form-control">
 
                     <label for="optionsNb">Nombre de choix à faire :</label>
                     <input type="number" id="numberoptions" name="numberoptions" class="form-control">
@@ -110,7 +110,7 @@ session_start();
         //Variable qui contient un saut de ligne pour éviter d'avoir un message undefined
         var input = '<br>';
 
-        //Fonction qui permet d'ajouter des inputs dans le fomulaire
+        //Fonction qui permet d'ajouter des inputs dans le formulaire
         function addField() {
 
             var recup_field = document.getElementById('span'+i);
