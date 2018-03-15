@@ -10,14 +10,10 @@
     <title>Organization</title>
 </head>
 <body>
-
         <form action="../Services/createOrganization.php" method="post">
             <input placeholder="Nom de l'organisation"  type="text" name="name">
             <button class="btn btn-primary" type="submit">Valider</button>
         </form>
-
-
-
 </body>
 </html>
 

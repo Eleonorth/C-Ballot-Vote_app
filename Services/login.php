@@ -9,7 +9,7 @@ include 'person.php';
 function fieldConnection() {
 
     $login = $_POST['email'];
-    $password = $_POST['mdp'];
+    $password = md5($_POST['mdp']);
 
     if (!empty($login) || !empty($password)) {
         connection($login, md5($password));
