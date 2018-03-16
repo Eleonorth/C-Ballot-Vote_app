@@ -195,6 +195,11 @@ $datas = $pdo->query($sql2);
                             <td><?php echo $result[1]?></td>
                             <td><?php echo $result[2]?></td>
                             <td><?php echo $result[3]?></td>
+                            <?php
+
+                            if ($result[3] != $result[2]) {
+                            ?>
+
                             <td><a href="../Services/clotureCampaign.php?id=<?php echo $result[4]?>">Clôturer</a></td>
                             <td><a href="editCampaign.php?id=<?php echo $result[4]?>">Editer</a></td>
                             <td><form action="../Services/deleteCampaign.php" method="post">
@@ -203,6 +208,19 @@ $datas = $pdo->query($sql2);
                                         <img src="../src/trash.svg" width="20" height="25">
                                     </button>
                                 </form></td>
+
+                            <?php    }
+                            else {
+                            ?>
+                            <td><a href="results.php?id=<?php echo $result[4]?>">Afficher les résultats</a></td>
+                            <td><form action="../Services/deleteCampaign.php" method="post">
+                                    <input type="hidden" name="id" value="<?php echo $result[4]?>">
+                                    <button type="submit" name="supprimer" onclick="if(!confirm('Voulez-vous supprimer cette campagne?')) return false;" class="btn btn-danger btn-sm">
+                                        <img src="../src/trash.svg" width="20" height="25">
+                                    </button>
+
+                            <?php    } ?>
+
 
                         </tr>
                     <?php } ?>

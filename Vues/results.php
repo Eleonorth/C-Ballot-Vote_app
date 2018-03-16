@@ -102,6 +102,8 @@ if ((isset($_POST['sub']) AND $_POST['sub']=='Afficher')) {
             <div class="col"></div>
             <div class="col">
                 <?php
+                $idcampaign = $_GET['id'];
+
                 if ((isset($_POST['sub']) AND $_POST['sub']=='Afficher')) {
                 $nbvotes = $db->query("SELECT COUNT(*) FROM vote")->fetchColumn();
                 ?><br/>
@@ -112,6 +114,8 @@ if ((isset($_POST['sub']) AND $_POST['sub']=='Afficher')) {
                 for ($id=0; $id<=$nbchoix; $id++) {
                 $optvote = $db->query("SELECT COUNT(*) AS idoption FROM vote WHERE idoption=$id")->fetchColumn();
                 $choix = $db->query("SELECT name FROM choice WHERE idoption=$id")->fetchColumn();
+
+
                 ?>
             </div>
             <div class="col"></div>
