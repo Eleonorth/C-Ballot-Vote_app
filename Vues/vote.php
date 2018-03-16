@@ -45,6 +45,7 @@ $stmt = $pdo->query('SELECT name, idoption FROM choice WHERE idcampaign ='. $idc
 <div class="container">
     <div class="row">
         <div class="col">
+            
             <?php
 
             while ($data = $stmt->fetch()) {
