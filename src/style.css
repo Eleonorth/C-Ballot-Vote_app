@@ -1,0 +1,105 @@
+nav h1 {
+    font-family: 'Finger Paint', cursive;
+    text-align: center;
+    font-size:50pt;
+    color: #CCF359;
+    margin: 0%;
+}
+
+nav {
+    width: 100%;
+}
+
+html {
+    height: 100%;
+    padding: 0%;
+}
+
+body {
+    min-height: 100%;
+    background-color: #9a9c95;
+    position: relative;
+}
+
+h2 {
+    text-align: center;
+}
+
+label {
+    display: flex;
+    text-align: left;
+    font-weight: bold;
+}
+
+input {
+    width: 50%;
+}
+
+table {
+    width: 100%;
+}
+
+#description {
+    border: 4px solid;
+    border-radius: 10px;
+    border-color: #F3193A;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    padding: 1%;
+    background-color: #F4F4F4;
+    max-width: 80%;
+}
+
+footer {
+    background-color: #1b1e21;
+    color: #fff;
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+#logout {
+    color: #F3193A;
+}
+
+#gestion {
+    color: #F3193A;
+    /*float: right;*/
+}
+
+#IDinfo{
+    margin-top: 2%;
+    display: inline-flex;
+
+ }
+
+#IDorga{
+    margin-top: 2%;
+}
+
+#IDcampaign{
+    margin-top: 2%;
+}
+
+.resTab{
+    background-color: #f3f1f3;
+    border-radius: 5px;
+}
+
+/* A modifier , j'arrive pas a tout bien mettre */
+#editPro{
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+#deletePro{
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.center{
+    text-align: center;
+}
