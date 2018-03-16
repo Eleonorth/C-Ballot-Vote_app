@@ -23,11 +23,11 @@ function connection() {
 
     //Compare les éléments récupérés avec les éléments entrés : sont-ils les mêmes?
     if ($sqlmail_fetch['email'] == $login && $sqlpwd_fetch['password'] == $password) {
-          $_SESSION['idperson'] = $sqlmail_fetch['idperson'];
+        $_SESSION['idperson'] = $sqlmail_fetch['idperson'];
         header('Location:../Vues/profile.php');
 
     } else {
-        
+
         $_SESSION['error_message'] = "Email ou mot de passe incorrect";
         header('Location:../index.php');
     }

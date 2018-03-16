@@ -22,6 +22,7 @@ function create($tablename,$fields,$data) {
     $pdo = connectDb();
     $pdo->exec($sql);
     $newId = $pdo->lastInsertId();
+    $_SESSION['signup'] = "Inscription réussie";
     return $newId;
 
 }

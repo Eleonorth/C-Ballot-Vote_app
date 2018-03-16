@@ -16,7 +16,7 @@ function verifMail() {
 
     //Condition qui permet de comparer l'adresse entrée et celles déjà présentes
     if ($sql_fetch['email'] != $email) {
-        
+
         checkField($email);
         header('Location:../index.php');
 
@@ -34,11 +34,11 @@ function checkField($email) {
     //Tous les post mis en variables
     $lastname = $_POST['lastname'];
     $firstname = $_POST['firstname'];
-    $mdp = $_POST['mdp'];
+    $mdp = md5($_POST['mdp']);
     $mdpConfirm = $_POST['confirmMdp'];
 
-            //Envoie à la fonction qui permet d'enregistrer l'utilisateur dans la bdd
-    createPerson($lastname, $firstname, $email, md5($mdp));
+    //Envoie à la fonction qui permet d'enregistrer l'utilisateur dans la bdd
+    createPerson($lastname, $firstname, $email, $mdp);
 
 }
 

@@ -1,15 +1,14 @@
 <?php
-include '../Services/class-vote.php';
-
-$dbh = new Database('vote');
-$db = $dbh->getPDO();
+include '../Utils/connexion.php';
+$db = connectDb();
+$idcampaign=$_GET['id'];
 
 $nbchoix = $db->query("SELECT MAX(idoption) FROM vote")->fetchColumn();
 
 if ((isset($_POST['sub']) AND $_POST['sub']=='Afficher')) {
     for ($id=0; $id<=$nbchoix; $id++) {
         $optvote = $db->query("SELECT COUNT(*) AS idoption FROM vote WHERE idoption=$id")->fetchColumn();
-        $choix = $db->query("SELECT name FROM choice WHERE idoption=$id")->fetchColumn();
+        $choix = $db->query("SELECT name FROM choice WHERE idoption=$id AND idcampaign =$idcampaign")->fetchColumn();
         $dataPoints = array("label"=> "$choix", "y"=> $optvote);
         $array[] = $dataPoints;
     }
@@ -49,101 +48,100 @@ if ((isset($_POST['sub']) AND $_POST['sub']=='Afficher')) {
 
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="../index.php"><h1>C-Ballot</h1></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="../index.php"><h1>C-Ballot</h1></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="../index.php">Accueil</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="profile.php">Mon profil</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Gérer mes informations
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="editProfile.php">Modifier mon profil</a>
-                        <a class="dropdown-item" href="deleteUser.php" style="color: #F3193A">Supprimer mon compte</a>
-                    </div>
-                </li>
-            </ul>
-            <form action="../Services/logout.php">
-                <button type="submit" id="logout" class="btn btn-light" style="float: right">
-                    <img src="../src/logout.svg" width="20" height="20">
-                    <span class="gestion">Se déconnecter</span>
-                </button>
-            </form>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="../index.php">Accueil</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="profile.php">Mon profil</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Gérer mes informations
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="editProfile.php">Modifier mon profil</a>
+                    <a class="dropdown-item" href="deleteUser.php" style="color: #F3193A">Supprimer mon compte</a>
+                </div>
+            </li>
+        </ul>
+        <form action="../Services/logout.php">
+            <button type="submit" id="logout" class="btn btn-light" style="float: right">
+                <img src="../src/logout.svg" width="20" height="20">
+                <span class="gestion">Se déconnecter</span>
+            </button>
+        </form>
+    </div>
+</nav>
+
+<div class="container">
+
+    <div class="row"><br></div>
+
+    <div class="row">
+        <form class="form" action="" method="post" enctype="multipart/form-data">
+            <button type="submit" name="sub" value="Afficher" class="btn btn-dark">Afficher les résultats</button>
+        </form>
+    </div>
+
+    <div class="row"><br></div>
+
+    <div class="row">
+        <div id="chartContainer" style="height: 370px; width: 100%;"></div>
+        <script class="diagram" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    </div>
+
+    <div class="row">
+        <div class="col"></div>
+        <div class="col">
+            <?php
+            if ((isset($_POST['sub']) AND $_POST['sub']=='Afficher')) {
+            $nbvotes = $db->query("SELECT COUNT(*) FROM vote INNER JOIN choice ON vote.idoption=choice.idoption
+             INNER JOIN campaign ON campaign.idcampaign=choice.idcampaign WHERE choice.idcampaign=$idcampaign")->fetchColumn();
+            ?><br/>
+            <?php
+            echo "<strong style='font-size:30px; border-radius:50px; color:#F3193A;'>Total votes : $nbvotes</strong>";
+            ?><br/><br/>
+            <?php
+            for ($id=0; $id<=$nbchoix; $id++) {
+            $optvote = $db->query("SELECT COUNT(*) AS idoption FROM vote WHERE idoption=$id")->fetchColumn();
+            $choix = $db->query("SELECT name FROM choice WHERE idoption=$id AND idcampaign =$idcampaign")->fetchColumn();
+            ?>
         </div>
-    </nav>
+        <div class="col"></div>
+    </div>
 
-    <div class="container">
-
-        <div class="row"><br></div>
-
-        <div class="row">
-            <form class="form" action="" method="post" enctype="multipart/form-data">
-                <button type="submit" name="sub" class="btn btn-dark">Afficher les résultats</button>
-            </form>
-        </div>
-
-        <div class="row"><br></div>
-
-        <div class="row">
-            <div id="chartContainer" style="height: 370px; width: 100%;"></div>
-            <script class="diagram" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-        </div>
-
-        <div class="row">
-            <div class="col"></div>
-            <div class="col">
-                <?php
-                $idcampaign = $_GET['id'];
-
-                if ((isset($_POST['sub']) AND $_POST['sub']=='Afficher')) {
-                $nbvotes = $db->query("SELECT COUNT(*) FROM vote")->fetchColumn();
-                ?><br/>
-                <?php
-                echo "<strong style='font-size:30px; border-radius:50px; color:#F3193A;'>Total votes : $nbvotes</strong>";
-                ?><br/><br/>
-                <?php
-                for ($id=0; $id<=$nbchoix; $id++) {
-                $optvote = $db->query("SELECT COUNT(*) AS idoption FROM vote WHERE idoption=$id")->fetchColumn();
-                $choix = $db->query("SELECT name FROM choice WHERE idoption=$id")->fetchColumn();
-
-
-                ?>
-            </div>
-            <div class="col"></div>
-        </div>
-
-        <div class="row">
-            <div class="col"></div>
-            <div class="col">
-                <?php
+    <div class="row">
+        <div class="col"></div>
+        <div class="col">
+            <?php
+            if ($optvote != 0) {
                 echo "<strong style='font-size:30px;'>Total $choix: $optvote</strong>";
                 $dataPoints = array("label"=> "Option $id", "y"=> $optvote);
                 $array[] = $dataPoints;
-                }
-                }
-                ?>
-            </div>
-            <div class="col"></div>
+            }
+            }
+            }
+            ?>
         </div>
+        <div class="col"></div>
+    </div>
 
-        <div class="row"><br></div>
-        <div class="row"><br></div>
+    <div class="row"><br></div>
+    <div class="row"><br></div>
 
-    </div> <!-- Fin du container -->
+</div> <!-- Fin du container -->
 
-    <footer>
-        C-Ballot &#169; 2018 - Hein Team
-    </footer>
+<footer>
+    C-Ballot &#169; 2018 - Hein Team
+</footer>
 
 </body>
 </html>
