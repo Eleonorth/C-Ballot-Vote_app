@@ -1,16 +1,22 @@
 <?php
 include '../Utils/generics.php';
-function createVote(){
 
-    $idoption = $_POST['idoption'];
-    $date = date('d/m/Y');
+function createVote($value){
+
+    $date = date('Y/m/d');
     $fields = array('idoption','voted');
-    $data = array($idoption,$date);
+    $data = array($value,$date);
 
     create('vote', $fields, $data);
-    //INSERT INTO 'vote' (idoption, voted) VALUES (1 "Poulet BBQ", date)
 }
-createVote();
+
+function recupValeur(){
+    foreach($_POST['name'] as $value){
+        echo $value;
+        createVote($value);
+    }
+}
+recupValeur();
 
 
 function editHasVoted(){
