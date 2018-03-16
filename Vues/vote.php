@@ -42,19 +42,26 @@ $stmt = $pdo->query('SELECT name, idoption FROM choice WHERE idcampaign ='. $idc
         </form>
     </div>
 </nav>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <?php
 
-<?php
+            while ($data = $stmt->fetch()) {
+            ?>
+            <form class="form-group" action="../Services/hasVoted.php" method="post">
+                <input type="hidden" name="idoption" value="<?php echo $data['idoption']; ?>">
+                <input type="radio" name="name[]" value="<?php echo $data['idoption']; ?>"><?php echo $data['name']; ?><br>
+                <?php }; ?>
+                <button type="submit" class="btn btn-light">Valider</button>
+            </form>
+        </div>
+    </div>
+</div>
 
-while ($data = $stmt->fetch()) {
-?>
-<form action="../Services/hasVoted.php" method="post">
-    <input type="hidden" name="idoption" value="<?php echo $data['idoption']; ?>">
-    <input type="radio" name="name[]" value="<?php echo $data['idoption']; ?>"><?php echo $data['name']; ?><br>
-    <?php
-    };
-    ?>
-    <button type="submit" class="btn btn-light">Valider</button>
-</form>
+<footer>
+    C-Ballot &#169; 2018 - Hein Team
+</footer>
 
 </body>
 </html>
