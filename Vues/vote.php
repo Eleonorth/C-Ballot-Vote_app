@@ -1,20 +1,35 @@
 <?php
+include '../Utils/connexion.php';
+
+$pdo = connectDb();
+$idcampaign = $_GET['id'];
+$stmt = $pdo->query('SELECT name, idoption FROM choice WHERE idcampaign ='. $idcampaign);
 
 ?>
 
 <!doctype html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <title>Document</title>
 </head>
 <body>
-<div class="product">
 
+<?php
+
+while ($data = $stmt->fetch()) {
+?>
+<form action="../Services/hasVoted.php" method="post">
+    <input type="hidden" name="idoption" value="<?php echo $data['idoption']; ?>">
+    <input type="radio" name="name[]" value="<?php echo $data['idoption']; ?>"><?php echo $data['name']; ?><br>
+    <?php
+    };
+    ?>
+    <button type="submit" class="btn btn-light">Valider</button>
+</form>
 
 </body>
 </html>
