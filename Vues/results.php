@@ -1,5 +1,6 @@
 <?php
 include '../Services/class-vote.php';
+
 $dbh = new Database('vote');
 $db = $dbh->getPDO();
 
