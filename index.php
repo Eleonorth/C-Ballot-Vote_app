@@ -98,10 +98,10 @@ if(isset($_SESSION['signup'])) {
             <h2>Se connecter</h2>
             <form class="form-group" action="Services/login.php"  method="post">
                 <label>Email :</label>
-                <input type="email" name="email" class="form-control" id="email-connect" onkeyup="connectInput()">
+                <input type="email" name="email" class="form-control" id="email-connect" onkeyup="connectInput()" required>
 
                 <label>Mot de passe :</label>
-                <input type="password" name="mdp" class="form-control" id="mdp-connect" onkeyup="connectInput()">
+                <input type="password" name="mdp" class="form-control" id="mdp-connect" onkeyup="connectInput()" required>
                 <hr>
 
                 <div class="container">
@@ -121,19 +121,19 @@ if(isset($_SESSION['signup'])) {
             <h2>S'inscrire</h2>
             <form class="form-group" action="Services/signup.php" method="post">
                 <label>Nom :</label>
-                <input type="text" name="lastname" class="form-control">
+                <input type="text" name="lastname" class="form-control" required>
 
                 <label>Prénom :</label>
-                <input type="text" name="firstname" class="form-control">
+                <input type="text" name="firstname" class="form-control" required>
 
                 <label>Email :</label>
-                <input type="email" name="email" class="form-control">
+                <input type="email" name="email" class="form-control" required>
 
                 <label>Mot de passe :</label>
-                <input type="password" name="mdp" class="form-control" id="password" onkeyup="registerMdp()">
+                <input type="password" name="mdp" class="form-control" id="password" onkeyup="registerMdp()" required>
 
                 <label>Confirmation mot de passe :</label>
-                <input type="password" name="confirmMdp" class="form-control" id="passwordconf" onkeyup="registerMdp()">
+                <input type="password" name="confirmMdp" class="form-control" id="passwordconf" onkeyup="registerMdp()" required>
                 <hr>
 
                 <div class="container">
