@@ -18,7 +18,7 @@ class Database{
 //fonction qui privée qui connecte à la base de donnée
     public function getPDO(){
         if ($this->pdo === NULL){
-            $pdo = new PDO('mysql:host=127.0.0.1;dbname=vote_bdd;charset=utf8', 'root', '');
+            $pdo = new PDO('mysql:host=localhost;dbname=vote_bdd;charset=utf8', 'root', '');
             $this->pdo = $pdo;
             return $pdo;
         }
