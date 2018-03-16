@@ -195,9 +195,8 @@ $datas = $pdo->query($sql2);
                             <td><?php echo $result[1]?></td>
                             <td><?php echo $result[2]?></td>
                             <td><?php echo $result[3]?></td>
-                            <td><a href="#">Clôturer</a></td>
+                            <td><a href="../Services/clotureCampaign.php?id=<?php echo $result[4]?>">Clôturer</a></td>
                             <td><a href="editCampaign.php?id=<?php echo $result[4]?>">Editer</a></td>
-                            <td><a href="vote.php?id=<?php echo $result[4]?>">Voter</a></td>
                             <td><form action="../Services/deleteCampaign.php" method="post">
                                     <input type="hidden" name="id" value="<?php echo $result[4]?>">
                                     <button type="submit" name="supprimer" onclick="if(!confirm('Voulez-vous supprimer cette campagne?')) return false;" class="btn btn-danger btn-sm">
