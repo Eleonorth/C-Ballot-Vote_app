@@ -12,8 +12,8 @@ function createVote($value){
 
 function recupValeur(){
     foreach($_POST['name'] as $value){
-        echo $value;
         createVote($value);
+        header('Location:../index.php');
     }
 }
 recupValeur();
